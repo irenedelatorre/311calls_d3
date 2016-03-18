@@ -1,0 +1,93 @@
+/*------------plot 2-------------*/
+
+.plot2{
+    width:20%;
+    height:40%;
+    /*margin:10px 0;*/
+    background:white;
+    float:left;
+}
+
+.plot2 h2{
+    font-family:Helvetica Neue, Helvetica, Arial;
+    position:relative;
+    font-size:0.7em;
+    color:rgb(80,80,80);
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+
+
+.area{
+    fill:#fdae61;
+    opacity: 0.1;
+}
+.line{
+    fill:none;
+    stroke:rgb(100,100,100);
+    stroke-width:1px;
+}
+
+.histogram.line.ticks{
+    font-size: 0.7em;
+}
+/*------------plot 1-------------*/
+
+
+
+
+.plot1 {
+    width:100%;
+    background:white;
+    height:600px;
+    position:relative;
+}
+.container .controls{
+    margin-bottom:20px;
+}
+
+
+.guide{
+    fill:none;
+    stroke:rgb(100,100,100);
+}
+
+
+.axis .tick line{
+    fill:none;
+    shape-rendering: crispEdges;
+    stroke: #e4e4e4;
+    stroke-width: 1;
+    /*stroke-dasharray: 3,2;*/
+}
+
+.dotsMax {
+    fill:#d7191c;
+    stroke:#fff;
+    stroke-width:1px;
+}
+
+.dotsMin {
+    fill:#2c7bb6;
+    stroke:#fff;
+    stroke-width:1px;
+}
+
+.dotsMean {
+    fill:#fdae61;
+    stroke:#fff;
+    stroke-width:1px;
+}
+
+.dotsMedian {
+    fill:#abd9e9;
+    stroke:#fff;
+    stroke-width:1px;
+}
+.dotsRange {
+    fill:none;
+    stroke: #d7191c;
+    stroke-width:1px;
+    shape-rendering: crispEdges;
+}

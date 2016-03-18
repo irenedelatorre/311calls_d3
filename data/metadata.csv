@@ -1,0 +1,192 @@
+type,id
+Abandoned Bicycle,1
+Abandoned Building,2
+Abandoned Vehicles,3
+Aircraft Noise Disturbance,4
+Alert Boston,5
+Animal Found,6
+Animal Generic Request,7
+Animal Lost,8
+Animal Noise Disturbances,9
+Automotive Noise Disturbance,10
+Bed Bugs,11
+Bicycle Issues,12
+Big Buildings Online Request,13
+Big Buildings Recycling (INTERNAL),14
+Billing Complaint,15
+Breathe Easy,16
+Bridge Maintenance,17
+Building Inspection Request,18
+BWSC General Request,19
+BWSC Pothole,20
+Call Log,21
+Carbon Monoxide,22
+Catchbasin,23
+CE Collection,24
+Cemetery Maintenance Request,25
+Check Investigation,26
+Checkin,27
+Chronic Dampness/Mold,28
+City/State Snow Issues,29
+Construction Debris,30
+Contractor Complaints,31
+Contractors Complaint,32
+Cross Metering - Sub-Metering,33
+Downed Wire,34
+Dumpster & Loading Noise Disturbances,35
+Egress,36
+Electrical,37
+Empty Litter Basket,38
+Equipment Repair,39
+Exceeding Terms of Permit,40
+Fire Department Request,41
+Fire Hydrant,42
+Fire in Food Establishment,43
+Food Alert - Confirmed,44
+Food Alert - Unconfirmed,45
+General Comments For a Program or Policy,46
+General Comments For An Employee,47
+General Lighting Request,48
+General Traffic Engineering Request,49
+Graffiti Removal,50
+Ground Maintenance,51
+Heat - Excessive  Insufficient,52
+Heat/Fuel Assistance,53
+Hero Square Sign Request,54
+Highway Maintenance,55
+Housing Discrimination Intake Form,56
+Idea Collection,57
+Illegal Auto Body Shop,58
+Illegal Dumping,59
+Illegal Occupancy,60
+Illegal Posting of Signs,61
+Illegal Rooming House,62
+Illegal Use,63
+Illegal Vending,64
+Improper Storage of Trash (Barrels),65
+Install New Lighting,66
+Item Price Missing,67
+Knockdown Replacement,68
+Lead,69
+Litter Basket Maintenance,70
+Loud Parties/Music/People,71
+Maintenance - Homeowner,72
+Maintenance Complaint - Residential,73
+Major System Failure,74
+MBTA Request,75
+Mechanical,76
+Metrolist Survey,77
+Mice Infestation - Residential,78
+Misc. Snow Complaint,79
+Missed Trash/Recycling/Yard Waste/Bulk Item,80
+Missing Sign,81
+Mosquitoes (West Nile),82
+Municipal Parking Lot Complaints,83
+Needle Pickup,84
+New Sign  Crosswalk or Pavement Marking,85
+New Tree Requests,86
+News Boxes,87
+No Price on Gas/Wrong Price,88
+No Utilities - Food Establishment - Electricity,89
+No Utilities - Food Establishment - Flood,90
+No Utilities - Food Establishment - Water,91
+No Utilities Residential - Electricity,92
+No Utilities Residential - Gas,93
+No Utilities Residential - Water,94
+Notification,95
+No-Tow Complaint Confirmation,96
+Occupying W/Out A Valid CO/CI,97
+OCR Front Desk Interactions,98
+OCR Metrolist,99
+Overcrowding,100
+Overflowing or Un-kept Dumpster,101
+Park Improvement Requests,102
+Parking Enforcement,103
+Parking Meter Repairs,104
+Parking on Front/Back Yards (Illegal Parking),105
+Parks General Request,106
+Parks Lighting/Electrical Issues,107
+Pavement Marking Inspection,108
+Pavement Marking Maintenance,109
+Pest Infestation - Residential,110
+Phone Bank Service Inquiry,111
+Pick up Dead Animal,112
+Pickup/Clear Conduit,113
+Pigeon Infestation,114
+Planting,115
+Plumbing,116
+Poor Conditions of Property,117
+Poor Ventilation,118
+Pothole Repair (Internal),119
+Private Parking Lot Complaints,120
+Product Short Measure,121
+Protection of Adjoining Property,122
+Public Events Noise Disturbances,123
+Public Works General Request,124
+PWD Graffiti,125
+Rat Bite,126
+Recycling Cart Inquiry,127
+Recycling Cart Return,128
+Rental Unit Delivery Conditions,129
+Request for Litter Basket Installation,130
+Request for Pothole Repair,131
+Request for Recycling Cart,132
+Request for Snow Plowing,133
+Request for Snow Plowing (Emergency Responder),134
+Requests for Street Cleaning,135
+Requests for Traffic Signal Studies or Reviews,136
+Roadway Repair,137
+Rodent Activity,138
+Rooftop & Mechanical Disturbances,139
+Scale Not Visible,140
+Scanning Overcharge,141
+Schedule a Bulk Item Pickup,142
+Schedule a Bulk Item Pickup SS,143
+Senior Shoveling,144
+Sewage/Septic Back-Up,145
+Short Measure - Gas,146
+Sidewalk Cover / Manhole,147
+Sidewalk Repair,148
+Sidewalk Repair (Internal),149
+Sidewalk Repair (Make Safe),150
+Sign Repair,151
+Sign Shop WO,152
+Snow Removal,153
+Snow/Ice Control,154
+Space Savers,155
+Squalid Living Conditions,156
+Sticker Request,157
+Street Light Knock Downs,158
+Street Light Longterm Repair,159
+Street Light Outages,160
+Street Light Outages (Internal),161
+Student Move-in Issues,162
+Student Overcrowding,163
+Test Case A,164
+Traffic Signal Inspection,165
+Traffic Signal Repair,166
+Transportation General Request,167
+Trash on Vacant Lot,168
+Tree Emergencies,169
+Tree in Park,170
+Tree Maintenance Requests,171
+Undefined Noise Disturbance,172
+Unit Pricing Wrong/Missing,173
+Unsafe Dangerous Conditions,174
+Unsanitary Conditions - Employees,175
+Unsanitary Conditions - Establishment,176
+Unsanitary Conditions - Food,177
+Unsatisfactory Living Conditions,178
+Unsatisfactory Utilities - Electrical  Plumbing,179
+Unshoveled Sidewalk,180
+Upgrade Existing Lighting,181
+Utility Call-In,182
+Utility Casting Repair,183
+Valet Parking Problems,184
+Walk-In Service Inquiry,185
+Water in Gas - High Priority,186
+Watermain Break,187
+Work Hours-Loud Noise Complaints,188
+Work w/out Permit,189
+Working Beyond Hours,190
+Zoning,191
