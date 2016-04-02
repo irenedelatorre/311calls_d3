@@ -1,6 +1,6 @@
 d3.timeSeries = function(){
 
-var _dis = d3.dispatch('hover','showValue');
+var _dis = d3.dispatch('hover','showValue', "changetypePaths");
 
   var w = 200,
     h = 200,
@@ -144,7 +144,7 @@ var _dis = d3.dispatch('hover','showValue');
         return this;
     }
 
-    d3.rebind(exports, _dis, 'on', 'showValue');
+    d3.rebind(exports, _dis, 'on', 'showValue', "on");
 
   return exports;
 }
