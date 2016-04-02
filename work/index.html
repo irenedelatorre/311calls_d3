@@ -10,23 +10,51 @@
         
     </head>
     <body>
-     <div class="container">
-            <h1>311 calls: duration of open cases</h1>
+    <div class="topfixed">
+        <h1>311 Calls in Boston</h1>
+        <div class="helper">
+            <p>Select a type of call</p>
             <div class="controls">
                 <select class="type-list">
+                    <option value="All">All</option>
                 </select>
             </div>
+        </div>
+
+    </div>
+     <div class="container">
+        <p class="intro">Here there should be an introduction explaining who, why, and what is this project</p>
+         <div class = "mapingBoston">
+             <div class="textMap">
+                 <div id="plot_map1" ><p>This is a text where we will explain how it works</p>
+                     <p>
+                         <span class="start-date"></span>
+                         <span class="end-date"></span>
+                     </p>
+                 </div>
+             </div>
+            <div id="plot_map2" ></div>
+            <div id="plot_map3" ></div>
+         </div>
+            <h2>How long does it take to close a 311 case?</h2>
+            <p>Explore how long it takes to the City of Boston to close a case depending on the neighborhood. </p>
+            <div id="legend1"></div>
             <div class="plot1" ></div>
+            <h2>Do the calls change from neighborhood to neighborhood?</h2>
+            <p>Explore which types of calls had each neighborhood and when. Hover over the diagrams to know the how many calls from each neighborhood there were each week last year.</p>
             <div class="plot2" ></div>
            
         </div>
 
         <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="//d3js.org/topojson.v1.min.js"></script>
          <script src="https://d3js.org/d3-queue.v2.min.js"></script>
          <script src="../lib/crossfilter/crossfilter.js"></script>
         <script src="modules/durationseries.js"></script>
         <script src="modules/histogram.js"></script>
-         
+        <script src="modules/mapseries.js"></script>
+        <script src="modules/mapdotsSeries.js"></script>
+        <script src="modules/bar.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
