@@ -1,76 +1,107 @@
-.container {
-    margin-top:150px;
-}
 
-.topfixed {
-    position: fixed;
-    top: 0;
-    height: 85px;
-    border-bottom: 1px solid rgb(255, 176, 0);
-    width: 100%;
-    padding-left: 20%;
-    z-index: 1;
-    background-color: #fff;
-    padding-top: 10px;
-    padding-bottom:10px;
-}
+
+/*.topfixed {*/
+    /*padding-left:20%;*/
+    /*padding-right:20%;*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*border-bottom: 1px solid rgb(255, 176, 0);*/
+    /*z-index: 1;*/
+    /*background-color: #fff;*/
+    /*padding-top: 10px;*/
+    /*padding-bottom:10px;*/
+    /*overflow: auto;*/
+/*}*/
 
 .helper {
     margin-top: 35px;
-    width: 50%;
-    float:left;
+    float: left;
+    padding-bottom: 0px;
+    margin-bottom: 30px;
+    color: #B26D5A;
 }
+
+
 
 .controls {
     float: left;
     border-bottom: none !important;
     margin-left: 20px;
     margin-right:20px;
+    margin-top: 0px;
+    height: auto;
 }
 
 h1 {
-    float:left;
-    width:50%;
+    width: 100%;
+    font-weight: bold;
+    font-size: 50px;
+    color: #333;
 }
 
+h2 small {
+    font-weight: 300;
+    line-height: 1;
+    color: #B26D5A;
+}
+
+.lead{
+    font-size:16px;
+}
 .topfixed p {
     float:left;
+}
+.intro {
+    padding-top:10px;
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.intro p {
+    line-height: 1.2;
+}
+.authors{
     font-weight: bold;
 }
+.introduction .col-md-12 {
+    padding-left:0;
+}
+
 
 /*------------plot 2-------------*/
 
 .plot2{
-    width:20%;
-    height:150px;
-    /*margin:10px 0;*/
-    background:white;
-    float:left;
-    /*margin-top:-20px;*/
+    width: 20%;
+    height: 150px;
+    padding-right: 30px;
+    padding-left: 30px;
+    /* margin: 10px 0; */
+    background: white;
+    float: left;
+    margin-bottom: 40px;
+    /* margin-left: 15px; */
 }
 
-.plot2 h2{
-    font-family:Helvetica Neue, Helvetica, Arial;
-    position:relative;
-    font-size:0.7em;
-    color:rgb(80,80,80);
+.plot2 .neighborhood-names {
+    font-family: Helvetica Neue, Helvetica, Arial;
+    position: relative;
+    font-size: 12px;
+    color: #333;
+    font-weight: normal;
     margin-top: 0px;
     margin-bottom: 10px;
 }
 
 
 .area{
-    fill:#fdae61;
+    fill:#B26D5A;
     opacity: 0.1;
 }
 .line{
     fill:none;
-    stroke:rgb(100,100,100);
+    stroke:#B26D5A;
     stroke-width:1px;
-}
-
-.histogram.line.ticks{
-    font-size: 0.7em;
+    opacity:1;
 }
 
 
@@ -114,12 +145,38 @@ canvas {
 }
 
 #plot_map3 {
-    margin-top:-120px;
+    padding-left:15px;
+}
+#plot_map3 .axis .tick text, .plot2 .axis .tick text, .histogram.line.ticks, .plot1 .axis-x .tick text{
+    font-size: 12px;
+    pointer-events: none;
+    fill: #999;
+    font-weight:300;
 }
 
+.barstext {
+    padding-left:0 !important;
+}
 
+.bars{
+    margin-top: -40px;
+}
+.mapingBoston h2, .duration h2, .neighborhoods h2{
+    margin-bottom:30px;
+}
 /*------------plot 1-------------*/
 
+#legend1 svg {
+    height: 30px;
+    padding-top: 10px;
+}
+#legend1 .row {
+
+}
+
+text .legendElement {
+    fill: #999;
+}
 .plot1 {
     width:100%;
     background:white;
@@ -142,31 +199,31 @@ canvas {
 }
 
 .dotsMax {
-    fill:#d7191c;
+    fill:#ED1C24;
     stroke:#fff;
     stroke-width:1px;
 }
 
 .dotsMin {
-    fill:#2c7bb6;
+    fill:#00ADDC;
     stroke:#fff;
     stroke-width:1px;
 }
 
 .dotsMean {
-    fill:#fdae61;
+    fill:#B26D5A;
     stroke:#fff;
     stroke-width:1px;
 }
 
 .dotsMedian {
-    fill:#abd9e9;
+    fill:#629195;
     stroke:#fff;
     stroke-width:1px;
 }
 .dotsRange {
     fill:none;
-    stroke: #d7191c;
+    stroke: #ED1C24;
     stroke-width:1px;
     shape-rendering: crispEdges;
 }

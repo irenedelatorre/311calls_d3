@@ -10,40 +10,47 @@
         
     </head>
     <body>
-    <div class="topfixed">
-        <h1>311 Calls in Boston</h1>
-        <div class="helper">
-            <p>Select a type of call</p>
-            <div class="controls">
-                <select class="type-list">
-                    <option value="All">All</option>
-                </select>
-            </div>
-        </div>
 
-    </div>
      <div class="container">
-        <p class="intro">Here there should be an introduction explaining who, why, and what is this project</p>
-         <div class = "mapingBoston">
-             <div class="textMap">
-                 <div id="plot_map1" ><p>This is a text where we will explain how it works</p>
-                     <p>
-                         <span class="start-date"></span>
-                         <span class="end-date"></span>
-                     </p>
+         <div class=" row">
+             <h1>Visualizing 213,209 Nonemergency calls</h1>
+             <h2><small>A study of all 311 calls that bostonians did during 2015</small></h2>
+             <div class="intro col-md-6">
+                 <p class="row"><span class="authors">By Fu Xiangyi and Irene de la Torre-Arenas</span> | April 2016</p>
+                 <p class="row">Data Visualization Workshop (Spring2016). Mentored by Siqi Zhu. | Northeastern University</p>
+             </div>
+             <div class="introduction">
+                 <p class="col-md-12 lead">Considering that the 311 number is a service provided by the City of Boston to make inquiries and non-urgent concerns, the types and numbers of complaints can be a good representation of how a neighborhood is or what types of problems might appear there. But one can go further and try to see if all calls are treated in the same way, or if it takes the same amount of time to close a case one place or another and re-do the question to "are all neighborhoods in Boston treated equally?".</p>
+             </div>
+
+             <div class="helper row">
+                 <p class="col-md-2">To interact with all the visualizations, choose a specific type of call. All of the charts will be updated at the same time.</p>
+                 <div class="controls col-md-9">
+                     <select class="type-list form-control">
+                         <option value="All">All</option>
+                     </select>
                  </div>
              </div>
-            <div id="plot_map2" ></div>
-            <div id="plot_map3" ></div>
+
          </div>
-            <h2>How long does it take to close a 311 case?</h2>
-            <p>Explore how long it takes to the City of Boston to close a case depending on the neighborhood. </p>
-            <div id="legend1"></div>
-            <div class="plot1" ></div>
+         <div class = "mapingBoston row">
+             <h2>Location of the calls</h2>
+             <p class="barstext col-md-2">Interact with the map by brushing over the bars to select a specific time range.</p>
+             <div class="bars col-md-10"><div id="plot_map3"></div></div>
+            <div id="plot_map2" class="row"></div>
+         </div>
+         <div class="duration row">
+             <h2>How long does it take to close a 311 case?</h2>
+             <p>Explore how long it takes to the City of Boston to close a case depending on the neighborhood. </p>
+             <div id="legend1"></div>
+             <p class="legendElement">In days</p>
+             <div class="plot1" ></div>
+         </div>
+        <div class="neighborhoods row">
             <h2>Do the calls change from neighborhood to neighborhood?</h2>
             <p>Explore which types of calls had each neighborhood and when. Hover over the diagrams to know the how many calls from each neighborhood there were each week last year.</p>
-            <div class="plot2" ></div>
-           
+            <div class="plot2 col-md-4" ></div>
+        </div>
         </div>
 
         <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
