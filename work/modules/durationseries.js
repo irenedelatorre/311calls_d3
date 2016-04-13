@@ -111,7 +111,9 @@ function exports (_selection){
             .attr("x2",function(d,i){
                 maxDuration = d3.max(d.values,function(neighborhood){if (neighborhood.duration>=0) {
                     return neighborhood.duration}else{return 0}
+
                 });
+
                 return scaleX(maxDuration)
             });
 

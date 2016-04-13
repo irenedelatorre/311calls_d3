@@ -10,6 +10,7 @@ var _dis = d3.dispatch('changetime','changetype');
     chartH = h - m.t - m.b,
     scaleX = d3.time.scale(),
     scaleY = d3.scale.linear(),
+    color = "#ababab",
     timeRange = [new Date(), new Date()], //default timeRange
     interval = d3.time.day,
     valueAccessor = function(d){ return d;},
@@ -46,9 +47,10 @@ var _dis = d3.dispatch('changetime','changetype');
       //var maxY = d3.max(data,function(d){return d.y});
      scaleY = scaleY.domain([0,maxY]);
     //var bisect = d3.bisector(function(d){return d.x}).left;
+      var dateFormat = d3.time.format('%b');
 
       //AXIS
-      var axisX = d3.svg.axis().orient('bottom').scale(scaleX).ticks(d3.time.month),
+      var axisX = d3.svg.axis().orient('bottom').scale(scaleX).ticks(d3.time.month).tickFormat(dateFormat),
           axisY = d3.svg.axis().orient('left').scale(scaleY).ticks(5);
 
       //append and update DOM
@@ -91,20 +93,24 @@ var _dis = d3.dispatch('changetime','changetype');
           .attr('y',function(d){return scaleY(d.y)})
           .attr('width',function(d){
             var time = d.x.getTime() + d.dx;
-            return scaleX(time) - scaleX(d.x) -1;
+            return scaleX(time) - scaleX(d.x) -2;
+
           })
-          .attr('height',function(d){return chartH - scaleY(d.y)})
-          .style('fill','gray');
+          .attr('height',function(d){
+           return chartH - scaleY(d.y)
+       })
+          .style('fill',color);
 
 
 
           
          //brush work
          svg.select('.brush').call(brush)
-         .selectAll('rect').attr('height',chartH)
+         .selectAll('rect').attr('height',chartH).style("color","red");
           
           brush.on('brush',function(xy){
             var extent = brush.extent();
+
 
             _dis.changetime(extent);
           });
@@ -154,6 +160,11 @@ var _dis = d3.dispatch('changetime','changetype');
     exports.maxScaleY = function(_maxY){
         if(!arguments.length) return maxY;
         maxY = _maxY;
+        return this;
+    };
+    exports.fillColor = function(_color){
+        if(!arguments.length) return color;
+        color = _color;
         return this;
     };
     d3.rebind(exports, _dis, 'on');

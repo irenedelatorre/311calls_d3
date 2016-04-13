@@ -8,6 +8,7 @@ var _dis = d3.dispatch('hover','showValue', "changetypePaths");
     layout = d3.layout.histogram(),
     chartW = w - m.l - m.r,
     chartH = h - m.t - m.b,
+      color = "#ababab",
     timeRange = [new Date(), new Date()], //default timeRange
     binSize = d3.time.day,
     maxY = 200, //maximum number of trips to show on the y axis
@@ -64,7 +65,7 @@ var _dis = d3.dispatch('hover','showValue', "changetypePaths");
     svgEnter.append('g').attr('class','axis').attr('transform','translate('+m.l+','+(m.t+chartH)+')');
 
         var tooltipEnter = svgEnter.append('g').attr('class','tool-tip');
-        tooltipEnter.append('circle').attr('class','tool-tip-circle').attr('r',5).style('fill', 'grey');
+        tooltipEnter.append('circle').attr('class','tool-tip-circle').attr('r',5).style('fill', "#fff").style("stroke","#B26D5A");
         tooltipEnter.append('text').attr('class','tool-tip-text').attr('text-anchor','middle').attr('dy',-5);
 
         svgEnter.append('rect').attr('class','mouse-target').attr('transform','translate('+m.l+','+m.t+')')
@@ -86,12 +87,19 @@ var _dis = d3.dispatch('hover','showValue', "changetypePaths");
     svg.select('.line')
       .select('path')
       .datum(_d)
+        //.transition()
+        //.duration(1000)
       .attr('d',line);
+
     //2.2 area
     svg.select('.area')
       .select('path')
       .datum(_d)
+        //.transition()
+        //.duration(1000)
       .attr('d',area);
+
+
         //2.3 horizontal axis
         svg.select('.axis')
             .call(axisX);
@@ -144,6 +152,11 @@ var _dis = d3.dispatch('hover','showValue', "changetypePaths");
         return this;
     }
 
+    exports.fillColor = function(_color){
+        if(!arguments.length) return color;
+        color = _color;
+        return this;
+    };
     d3.rebind(exports, _dis, 'on', 'showValue', "on");
 
   return exports;

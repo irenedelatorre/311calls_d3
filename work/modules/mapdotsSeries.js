@@ -1,5 +1,5 @@
 d3.mapDotsSeries = function (neighborhoods){
-    var _dis = d3.dispatch('changetype');
+    var _dis = d3.dispatch('changetype','shape');
 
     //internal variables, these variables need some defualt variables which can be rewritten later
     var w = 800,
@@ -17,6 +17,7 @@ d3.mapDotsSeries = function (neighborhoods){
         .center(bostonLngLat)
         .translate([(chartW/2),chartH/2])
         .scale(scale);
+        //.rotate([0,0,90]);
 
     var pathMap = d3.geo.path().projection(projection);
 
@@ -28,18 +29,12 @@ d3.mapDotsSeries = function (neighborhoods){
 
     function draw (data,i){
 
-        console.log(data);
-
-
-
         var projection = d3.geo.mercator()
             .center(bostonLngLat)
             .translate([(chartW/2),(chartH/2)])
             .scale(scale);
 
-
-        var canvas = d3.select(this)
-            .append('canvas')
+        var canvas = d3.select(this).select('canvas')
             .attr('width',chartW)
             .attr('height',chartH)
             .attr("transform","translate("+m.l+","+ m.t+")");
@@ -62,31 +57,75 @@ d3.mapDotsSeries = function (neighborhoods){
         ctx.stroke();
 
         //console.log(data[i].values);
-
-        data.forEach(function (d){
-            calls = d.values;
-            var t = 0;
-            for (i=0; i<calls.length; i++) {
-                var xy = projection(calls[i].lngLat);
-                var show = (t - calls.startTime)/(calls.endTime - calls.startTime)>1?1:(t - calls.startTime)/(calls.endTime - calls.startTime);
-
-
-                ctx.beginPath();
-                ctx.fillStyle = 'rgba(0,0,0,0.05)';
-                ctx.arc(xy[0],xy[1],1,0,Math.PI*2);
-                ctx.fill();
-
-            }
-
-            //t += speed;
-
-
-
+        var newTimeRange = crossfilter(data);
+        var callsByTime = newTimeRange.dimension(function (d) {
+            return d.startTime
         });
 
-        //on open case, start drawing dots
 
-        //on end case, remove dots
+        //question!! how brush work?? and how to clear the canvas dots at the end 
+        _dis.on("shape",function(t){
+            //console.log("tmodule",t);
+            //console.log("datamodule",data);
+            ctx.clearRect(0,0,w,h);
+            ctx.lineWidth = 1;
+            path(neighborhoods);
+            ctx.fillStyle = '#f7f7f7';
+            ctx.strokeStyle = 'white';
+            ctx.fill();
+            ctx.stroke();
+
+            //crossfilter --> time range is t[0] and t[t.length-1]
+
+
+
+            if (t.length > 0){
+
+                var endDate = t[0].startTime,
+                    startDate = t[(t.length)-1].startTime;
+
+                var callsNewTimeRange = callsByTime.filter([startDate,endDate]).top(Infinity);
+
+            };
+
+            //console.log(callsNewTimeRange);
+
+
+            callsNewTimeRange.forEach(function (d){
+                //console.log(d.duration);
+
+                //var pointTime = (t[0].startTime).getTime();
+                //var pointEndTime = (t[t.length-1].endTime).getTime();
+                //var show = ((callstartTime >= pointTime) && (pointEndTime - callstartTime)/(callendTime - callstartTime) > 1) ? 1 : 0;
+
+                var xy = projection(d.lngLat);
+                var callstartTime = d.startTime.getTime();
+                var callendTime = d.endTime.getTime();
+                var scaleColor = d3.scale.linear().domain([0,10]).range(["rgba(0,173,220,0.05)","rgba(237,28,36,1)"]);
+                var myColor = scaleColor(d.duration);
+                //var myColor=("rgba(0,173,220,0.1)");
+
+                ctx.beginPath();
+                ctx.fillStyle = myColor;
+                ctx.arc(xy[0],xy[1],1,0,Math.PI*2); //(x,y,r,sAngle,eAngel,counterclockwise)
+                ctx.fill();
+
+                    //console.log(show)
+                    //switch(show){
+                    //    case 1:{
+                    //        ctx.beginPath();
+                    //        ctx.fillStyle = myColor;
+                    //        ctx.arc(xy[0],xy[1],1,0,Math.PI*2); //(x,y,r,sAngle,eAngel,counterclockwise)
+                    //        ctx.fill();
+                    //        break;
+                    //    }
+                    //}
+
+
+
+
+            });
+        });
 
     }
 
@@ -126,6 +165,6 @@ d3.mapDotsSeries = function (neighborhoods){
         return this;
     };
 
-    d3.rebind(exports,_dis,"on");
+    d3.rebind(exports,_dis,"on","shape");
     return exports
 };
