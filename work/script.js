@@ -63,16 +63,11 @@ function dataloaded(err,neighborhood,rows,types) {
     console.log("all, max:"+ max + ", min" + min + ", mean"+ mean +" median" + median)
 
     var data = rows;
-
     var calls = crossfilter(data);
-
     var callsByType = calls.dimension(function (d) {
         return d.type
     });
-
     var callsByTime = calls.dimension(function(d){return d.startTime});
-
-
 
     callsType = callsByType.filterAll().top(Infinity);
     callsType.sort(function (a, b) {
@@ -86,9 +81,7 @@ function dataloaded(err,neighborhood,rows,types) {
         })
         .entries(callsType);
 
-    var neighborhoodsNames = nestedNeighborhood.map(function (d) {
-        return d.key
-    });
+    var neighborhoodsNames = nestedNeighborhood.map(function (d) {return d.key});
 
 
     //barchart
@@ -100,10 +93,17 @@ function dataloaded(err,neighborhood,rows,types) {
         .value(function(d){ return d.startTime;})
         .interval(d3.time.week)
         .on('changetime',function(xy){
-            console.log(xy);
-            d3.select(".start-date").html(xy[0]); //add text to html element
-            d3.select(".end-date").html(xy[1]);
-            globalDispatch.changetypedots(xy);
+            //console.log(xy);
+            var callsTime = callsByTime.filter([xy[0],xy[1]]).top(Infinity);
+
+            /*   d3.select(".start-date").html(xy[0]);
+             d3.select(".end-date").html(xy[1]);*/
+
+            globalDispatch.changetypedots(callsTime); //this is t in the module
+            //console.log(callsTime);
+            /*   d3.select(".start-date").html(xy[0]); //add text to html element
+             d3.select(".end-date").html(xy[1]);
+             globalDispatch.changetypedots(xy);*/
 
         });
 
@@ -115,7 +115,7 @@ function dataloaded(err,neighborhood,rows,types) {
     var mapModuleDots = d3.mapDotsSeries(neighborhood)
         .width(wMap1)
         .height(hMap1)
-        .scale(230000);
+        .scale(220000);
 
     d3.select(".container").select(".mapingBoston").select('#plot_map2').append('canvas')
 
@@ -124,7 +124,7 @@ function dataloaded(err,neighborhood,rows,types) {
         .datum(callsType)
         .call(mapModuleDots);
 
-        mapModuleDots.shape(callsByTime.filterAll().top(Infinity));
+    mapModuleDots.shape(callsByTime.filterAll().top(Infinity));
 
     globalDispatch.on('changetypedots',function(t){
         mapModuleDots.shape(t);
@@ -173,6 +173,7 @@ function dataloaded(err,neighborhood,rows,types) {
         .datum(nestedNeighborhood)
         .call(durationModule);
 
+    //small multiples
     var plots2 = d3.select('.container').select(".neighborhoods").selectAll('.plot2')
         .data(nestedNeighborhood);
 
@@ -209,7 +210,6 @@ function dataloaded(err,neighborhood,rows,types) {
         });
 
     //Dispatch function
-
     globalDispatch.on("changetype", function (type) {
         var neighborhoodsNames = ["East Boston", "Hyde Park", "Roslindale", "Dorchester", "Greater Mattapan", "Beacon Hill", "Roxbury", "Allston / Brighton", "South End", "West Roxbury", "Mission Hill", "Fenway / Kenmore / Audubon Circle / Longwood", "Charlestown", "Downtown / Financial District", "Jamaica Plain", "South Boston / South Boston Waterfront", "Boston", "Back Bay", "Unknown", "Brighton", "Chestnut Hill"];
 
@@ -225,8 +225,7 @@ function dataloaded(err,neighborhood,rows,types) {
             callsType.sort(function (a, b) {
                 return a.duration - b.duration;
             });
-        }
-        ;
+        };
 
         var nestedNeighborhoodInDispatch = d3.nest()
             .key(function (d) {
@@ -249,14 +248,14 @@ function dataloaded(err,neighborhood,rows,types) {
                 .maxScaleY(800);
 
             var newY = 50;
-        }
-        ;
+        };
 
         barPlot.datum(callsType)
             .call(barchartInDispatch);
 
         plot_mapDots.datum(callsType)
             .call(mapModuleDots);
+
         mapModuleDots.shape(callsByTime.filter(type).top(Infinity));
 
         var plots2 = d3.select('.container').selectAll('.plot2')
@@ -283,7 +282,6 @@ function dataloaded(err,neighborhood,rows,types) {
 
                 d3.select(this).datum(d.values)
                     .call(timeSeries2);
-
             });
 
 

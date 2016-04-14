@@ -41,14 +41,6 @@ d3.mapDotsSeries = function (neighborhoods){
             .attr('height',chartH)
             .attr("transform","translate("+m.l+","+ m.t+")");
 
-        var oneHour = (1/(24*60));
-        var color1 = "rgba(224,255,245,0.05)";
-        var color2 = "rgba(0,173,220,0.05)";
-        var color3 = "rgba(98,145,149,0.05)";
-        var color4 = "rgba(178,109,90,1)";
-        var color5 = "rgba(237,28,36,1)";
-        var scaleColor = d3.scale.linear().domain([0,oneHour,12,50]).range([color2,color3,color4,color5]);
-
         ctx = canvas.node().getContext('2d');
 
         path = d3.geo.path()
@@ -59,12 +51,13 @@ d3.mapDotsSeries = function (neighborhoods){
 
         ctx.clearRect(0,0,w,h);
 
-        ctx.lineWidth = 2;
-        path(neighborhoods);
-        ctx.fillStyle = '#D4D4D4';
-        ctx.strokeStyle = 'white';
-        ctx.fill();
-        ctx.stroke();
+        var oneHour = (1/(24*60));
+        var color1 = "rgba(224,255,245,0.05)";
+        var color2 = "rgba(0,173,220,0.5)";
+        var color3 = "rgba(98,145,149,0.5)";
+        var color4 = "rgba(178,109,90,1)";
+        var color5 = "rgba(237,28,36,1)";
+        var scaleColor = d3.scale.linear().domain([0,oneHour,12,30]).range([color2,color3,color4,color5]);
 
         var newTimeRange = crossfilter(data);
         var callsByTime = newTimeRange.dimension(function (d) {
@@ -82,8 +75,6 @@ d3.mapDotsSeries = function (neighborhoods){
             ctx.fill();
             ctx.stroke();
 
-
-
             //crossfilter --> time range is t[0] and t[t.length-1]
 
             if (t.length > 0){
@@ -95,31 +86,42 @@ d3.mapDotsSeries = function (neighborhoods){
 
             };
 
-            //console.log(callsNewTimeRange);
-
-
+            //draw every call as a dot
             callsNewTimeRange.forEach(function (d){
-                //console.log(d.duration);
-
                 var xy = projection(d.lngLat);
                 var callstartTime = d.startTime.getTime();
                 var callendTime = d.endTime.getTime();
                 var myColor = scaleColor(d.duration);
+                //var myColor = "rgba(0,173,220,1)";
 
                 ctx.beginPath();
                 ctx.fillStyle = myColor;
                 ctx.arc(xy[0],xy[1],1,0,Math.PI*2); //(x,y,r,sAngle,eAngel,counterclockwise)
                 ctx.fill();
             });
-            //console.log(neighborhoods.name)
+
+            //draw neighborhood names
             (neighborhoods.features).forEach(function(d){
-                console.log(d.properties.Name)
-                //console.log(d.properties[name])
-            })
-            ctx.fillStyle = '#333';
-            ctx.fillText(neighborhoods.key, canvas.width/2, canvas.height/2);
+
+
+
+                var nameX = path.centroid(d)[0];
+                var nameY = path.centroid(d)[1];
+
+                ctx.strokeStyle = 'white';
+                ctx.lineWidth = 1;
+                ctx.textAlign = "center";
+                ctx.font = "14px sans-serif";
+                ctx.strokeText(d.properties.Name, nameX, nameY);
+
+                ctx.fillStyle = '#333';
+                ctx.textAlign = "center";
+                ctx.font = "14px sans-serif";
+                ctx.fillText(d.properties.Name, nameX, nameY);
+            });
 
         });
+
 
     }
 

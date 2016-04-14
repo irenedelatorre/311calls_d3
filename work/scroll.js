@@ -7,7 +7,7 @@ jQuery(document).ready(function(){
         var scrollPos = jQuery(window).scrollTop();
 
         if (scrollPos>=navOffset){
-            console.log("sticky");
+
             jQuery(".main-nav").addClass("main-nav-scrolled");
             jQuery(".visualizations").addClass("visualizations-scrolled");
 
