@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>final work</title>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../global.css"/>
+        <link rel="stylesheet" href="style.css"/>
+        
+    </head>
+    <body>
+
+     <div class="container">
+         <div class="titles row">
+             <h1 class="col-md-12">Visualizing 213,209 Nonemergency calls</h1>
+             <h2 class="col-md-12"><small>A study of all 311 calls that bostonians did during 2015</small></h2>
+             <div class="intro col-md-6">
+                 <p><span class="authors">By Fu Xiangyi and Irene de la Torre-Arenas</span> | April 2016</p>
+                 <p>Data Visualization Workshop (Spring2016). Mentored by Siqi Zhu. | Northeastern University</p>
+             </div>
+             <div class="introduction col-md-12">
+                 <p class="lead">Considering that the 311 number is a service provided by the City of Boston to make inquiries and non-urgent concerns, the types and numbers of complaints can be a good representation of how a neighborhood is or what types of problems might appear there. But one can go further and try to see if all calls are treated in the same way, or if it takes the same amount of time to close a case one place or another and re-do the question to "are all neighborhoods in Boston treated equally?".</p>
+             </div>
+         </div>
+         <div class="main-nav">
+             <p class="col-md-3 expltext">To interact with all the visualizations, choose a specific type of call. All of the charts will be updated at the same time.</p>
+             <div class="controls col-md-8">
+                 <select class="type-list form-control">
+                     <option value="All">All</option>
+                 </select>
+             </div>
+         </div>
+         <div class="visualizations row">
+         <div class = "mapingBoston col-md-12">
+             <h2>Location of the calls</h2>
+             <p class="lead">The average time to do so amounted to 10 days, having cases of calls that were not solved within the following 50 days or even 300 days (there are cases in the database with no closing date after the end of the year). The neighborhood with more problems of this kind was East Boston, with an average time of 12 days.</p>
+             <p class="expltext col-md-3">Each bar represents the number of calls done during a week. Brush over them to know their location in that specific time range. </p>
+             <div class="bars col-md-9"><div id="plot_map3"></div></div>
+            <div id="plot_map2" class="col-md-12"></div>
+         </div>
+         <div class="duration col-md-12">
+             <h2>How long does it take to close a 311 case?</h2>
+             <p>Explore how long it takes to the City of Boston to close a case depending on the neighborhood. </p>
+             <div id="legend1"></div>
+             <div class="custom-tooltip">
+                 <p id="value"></p>
+             </div>
+             <p class="legendElement">In days</p>
+             <div class="plot1" ></div>
+         </div>
+        <div class="neighborhoods col-md-12">
+            <h2>Do the calls change from neighborhood to neighborhood?</h2>
+            <p>Explore which types of calls had each neighborhood and when. Hover over the diagrams to know the how many calls from each neighborhood there were each week last year.</p>
+            <div class="plot2" ></div>
+        </div>
+         </div>
+        </div>
+
+        <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="//d3js.org/topojson.v1.min.js"></script>
+        <script src="https://d3js.org/d3-queue.v2.min.js"></script>
+        <script src="../lib/jquery/jquery-1.11.1.min.js"></script>
+        <script src="../lib/crossfilter/crossfilter.js"></script>
+        <script src="scroll.js"></script>
+        <script src="modules/durationseries.js"></script>
+        <script src="modules/histogram.js"></script>
+        <script src="modules/mapdotsSeries.js"></script>
+        <script src="modules/bar.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
