@@ -52,12 +52,14 @@ d3.mapDotsSeries = function (neighborhoods){
         ctx.clearRect(0,0,w,h);
 
         var oneHour = (1/(24*60));
-        var color1 = "rgba(224,255,245,0.05)";
-        var color2 = "rgba(0,173,220,0.5)";
-        var color3 = "rgba(98,145,149,0.5)";
-        var color4 = "rgba(178,109,90,1)";
-        var color5 = "rgba(237,28,36,1)";
-        var scaleColor = d3.scale.linear().domain([0,oneHour,12,30]).range([color2,color3,color4,color5]);
+        console.log(oneHour);
+        var color1 = "rgba(224,255,245,0.01)";
+        var color2 = "rgba(0,173,220,0.1)";
+        var color3 = "rgba(98,145,149,0.1)";
+        var color4 = "rgba(120,87,166,0.1)"
+        var color5 = "rgba(178,109,90,0.1)";
+        var color6 = "rgba(237,28,36,0.1)";
+        var scaleColor = d3.scale.linear().domain([0,oneHour,12,50,200,450]).range([color2,color3,color4,color5,color6,color6]);
 
         var newTimeRange = crossfilter(data);
         var callsByTime = newTimeRange.dimension(function (d) {

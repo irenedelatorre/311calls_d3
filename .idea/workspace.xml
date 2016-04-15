@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="436e7e15-ae44-4021-bd4b-a8bc967dcb3f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/modules/histogram.js" afterPath="$PROJECT_DIR$/work/modules/histogram.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/modules/mapdotsSeries.js" afterPath="$PROJECT_DIR$/work/modules/mapdotsSeries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/script.js" afterPath="$PROJECT_DIR$/work/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/scroll.js" afterPath="$PROJECT_DIR$/work/scroll.js" />
     </list>
     <ignored path="311calls_Boston.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +46,8 @@
       <file leaf-file-name="mapdotsSeries.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/work/modules/mapdotsSeries.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13057671">
-              <caret line="59" column="66" selection-start-line="59" selection-start-column="66" selection-end-line="59" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.13029316">
+              <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -109,10 +106,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="918" />
-    <option name="y" value="5" />
+    <option name="x" value="848" />
+    <option name="y" value="287" />
     <option name="width" value="1032" />
-    <option name="height" value="1056" />
+    <option name="height" value="1058" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -315,7 +312,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="918" y="5" width="1032" height="1056" extended-state="0" />
+    <frame x="848" y="287" width="1032" height="1058" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.002952756" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -395,8 +392,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/work/modules/mapdotsSeries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13057671">
-          <caret line="59" column="66" selection-start-line="59" selection-start-column="66" selection-end-line="59" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.13029316">
+          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
           <folding />
         </state>
       </provider>
