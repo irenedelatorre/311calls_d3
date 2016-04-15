@@ -53,13 +53,16 @@ d3.mapDotsSeries = function (neighborhoods){
 
         var oneHour = (1/(24*60));
         console.log(oneHour);
-        var color1 = "rgba(224,255,245,0.01)";
-        var color2 = "rgba(0,173,220,0.1)";
-        var color3 = "rgba(98,145,149,0.1)";
-        var color4 = "rgba(120,87,166,0.1)"
-        var color5 = "rgba(178,109,90,0.1)";
-        var color6 = "rgba(237,28,36,0.1)";
-        var scaleColor = d3.scale.linear().domain([0,oneHour,12,50,200,450]).range([color2,color3,color4,color5,color6,color6]);
+        var color1 = "rgb(224,240,245)"; //in one hour
+        var color2 = "rgb(142,202,201)"; // from one hour to 1 day
+        var color3 = "rgb(000,173,219)"; // from 1 day to the average
+        var color4 = "rgb(143,143,150)"; // from the average to one month
+        var color5 = "rgb(194,106,092)"; // from one month to one year
+        var color6 = "rgb(236,033,039)"; // more than one year
+        //var color7 = "rgb(255,109,001)"; // more than one year
+
+        var scaleColor = d3.scale.linear().domain([0,oneHour,1,12,30,365,450]).range([color1,color2,color3,color4,color5,color6,color6]);
+        var scaleSize = d3.scale.linear().domain([0,oneHour,1,12,30,365,450]).range([1,1,1,1,1,1,1]);
 
         var newTimeRange = crossfilter(data);
         var callsByTime = newTimeRange.dimension(function (d) {
@@ -94,12 +97,19 @@ d3.mapDotsSeries = function (neighborhoods){
                 var callstartTime = d.startTime.getTime();
                 var callendTime = d.endTime.getTime();
                 var myColor = scaleColor(d.duration);
+                var mySize = scaleSize(d.duration);
                 //var myColor = "rgba(0,173,220,1)";
-
+                //var mySize = 1;
+                ctx.globalAlpha=0.5;
                 ctx.beginPath();
+                ctx.strokeStyle = "rgba(0,0,0,0.1)";
+                ctx.lineWidth = 0.01;
                 ctx.fillStyle = myColor;
-                ctx.arc(xy[0],xy[1],1,0,Math.PI*2); //(x,y,r,sAngle,eAngel,counterclockwise)
+                ctx.arc(xy[0],xy[1],mySize,0,Math.PI*2); //(x,y,r,sAngle,eAngel,counterclockwise)
                 ctx.fill();
+                //ctx.stroke();
+                ctx.globalAlpha=1;
+
             });
 
             //draw neighborhood names

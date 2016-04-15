@@ -218,7 +218,7 @@ function dataloaded(err,neighborhood,rows,types) {
             console.log("all");
             callsType = callsByType.filterAll().top(Infinity);
             callsType.sort(function (a, b) {
-                return a.duration - b.duration;
+                return a.startTime - b.startTime;
             });
         } else {
             callsType = callsByType.filter(type).top(Infinity);
