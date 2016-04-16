@@ -73,11 +73,11 @@ d3.mapDotsSeries = function (neighborhoods){
         _dis.on("shape",function(t){
 
             ctx.clearRect(0,0,w,h);
-            ctx.lineWidth = 1;
+            ctx.lineWidth = 2;
             path(neighborhoods);
-            ctx.fillStyle = '#f7f7f7';
-            ctx.strokeStyle = 'white';
-            ctx.fill();
+            ctx.fillStyle = 'rgb(221, 223, 227)';
+            ctx.strokeStyle = "rgb(221, 223, 227)";
+            //ctx.fill();
             ctx.stroke();
 
             //crossfilter --> time range is t[0] and t[t.length-1]
@@ -112,28 +112,198 @@ d3.mapDotsSeries = function (neighborhoods){
 
             });
 
-            //draw neighborhood names
-            (neighborhoods.features).forEach(function(d){
+            if (t.length==0 || t.length>0){
+                //draw neighborhood names
+                (neighborhoods.features).forEach(function(d){
+                    var nameX = path.centroid(d)[0];
+                    var nameY = path.centroid(d)[1];
+                    ctx.strokeStyle = '#333';
+                    //ctx.setLineDash([15, 5]);
+                    ctx.textAlign = "left";
+                    ctx.lineWidth = 0.5;
+                    ctx.font = "12px sans-serif";
+                    ctx.textAlign = "left";
+                    ctx.fillStyle = '#333';
+                    var newY = nameY-2;
+                    if (d.properties.Name=="West Roxbury"){
+                        ctx.textAlign = "right";
+                        ctx.fillText(d.properties.Name, 90, nameY);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(100,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Roslindale") {
+                        ctx.textAlign = "right";
+                        ctx.fillText(d.properties.Name, 90, nameY);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(100,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Roxbury") {
+                        ctx.textAlign = "right";
+                        ctx.fillText(d.properties.Name, 90, nameY);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(100,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Hyde Park") {
+                        ctx.textAlign = "right";
+                        ctx.fillText(d.properties.Name, 90, nameY);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(100,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Mattapan") {
+                        ctx.fillText(d.properties.Name, nameX-20, 560);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,nameY);
+                        ctx.lineTo(nameX,540);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Dorchester") {
+                        ctx.fillText(d.properties.Name, nameX-20, 560);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,nameY);
+                        ctx.lineTo(nameX,540);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="South Boston") {
+                        ctx.fillText(d.properties.Name, nameX-20, 560);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,nameY);
+                        ctx.lineTo(nameX,540);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Chinatown") {
+                        ctx.fillText(d.properties.Name, nameX-90, 490);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,nameY);
+                        ctx.lineTo(nameX-50,nameY);
+                        ctx.lineTo(nameX-50,470);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Leather District") {
+                        ctx.fillText(d.properties.Name, nameX-5, 450);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,nameY);
+                        ctx.lineTo(nameX,430);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Jamaica Plain") {
+                        ctx.textAlign = "right";
+                        ctx.fillText(d.properties.Name, nameX, nameY-70);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX-20,newY);
+                        ctx.lineTo(nameX-20,newY-60);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Mission Hill") {
+                        ctx.textAlign = "right";
+                        ctx.fillText(d.properties.Name, nameX, nameY-70);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX-15,newY);
+                        ctx.lineTo(nameX-15,newY-60);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Fenway") {
+                        ctx.fillText(d.properties.Name, nameX, nameY-70);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX+10,newY-20);
+                        ctx.lineTo(nameX+10,newY-60);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Bay Village") {
+                        ctx.fillText(d.properties.Name, nameX-10, nameY-80);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX+20,newY-30);
+                        ctx.lineTo(nameX+20,newY-70);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Longwood Medical Area") {
+                        var newY = 221.3;
+                        ctx.fillText(d.properties.Name, 900, newY+2);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,nameY);
+                        ctx.lineTo(nameX,newY);
+                        ctx.lineTo(890,newY);
+                        console.log(newY)
+                        ctx.stroke()
+                    }else if (d.properties.Name=="West End") {
+                        var newY = 237;
+                        ctx.fillText(d.properties.Name, 900, newY+2);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(890,newY);
+                        console.log(newY)
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Back Bay") {
+                        var newY = 252.7;
+                        ctx.fillText(d.properties.Name, 900, newY+2);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(890,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Beacon Hill") {
+                        var newY = 268.4;
+                        ctx.fillText(d.properties.Name, 900, newY+2);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(890,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="North End") {
+                        var newY = 284.1;
+                        ctx.fillText(d.properties.Name, 900, newY+2);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(890,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Downtown") {
+                        var newY = 299.8;
+                        ctx.fillText(d.properties.Name, 900, newY+2);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(890,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="South End") {
+                        var newY = 315.5;
+                        ctx.fillText(d.properties.Name, 900, newY+2);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(890,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="East Boston") {
+                        var newY = 331.2;
+                        ctx.fillText(d.properties.Name, 900, newY+2);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(890,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="South Boston Waterfront") {
+                        console.log(newY)
+                        ctx.fillText(d.properties.Name, 900, nameY+10);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY+10);
+                        ctx.lineTo(890,newY+10);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Brighton") {
+                        ctx.textAlign = "right";
+                        ctx.fillText(d.properties.Name, nameX-90, nameY);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(nameX-80,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Allston") {
+                        ctx.fillText(d.properties.Name, nameX+70, nameY);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(nameX+60,newY);
+                        ctx.stroke()
+                    }else if (d.properties.Name=="Charlestown") {
+                        ctx.fillText(d.properties.Name, nameX, nameY-80);
+                        ctx.beginPath()
+                        ctx.moveTo(nameX,newY);
+                        ctx.lineTo(nameX,newY-70);
+                        ctx.stroke()
+                    }
+                    else{
+                        ctx.fillText(d.properties.Name, nameX, nameY);
+                    }
 
 
-
-                var nameX = path.centroid(d)[0];
-                var nameY = path.centroid(d)[1];
-
-                ctx.strokeStyle = 'white';
-                ctx.lineWidth = 1;
-                ctx.textAlign = "center";
-                ctx.font = "14px sans-serif";
-                ctx.strokeText(d.properties.Name, nameX, nameY);
-
-                ctx.fillStyle = '#333';
-                ctx.textAlign = "center";
-                ctx.font = "14px sans-serif";
-                ctx.fillText(d.properties.Name, nameX, nameY);
-            });
-
+                });
+            }
         });
-
 
     }
 
