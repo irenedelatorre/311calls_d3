@@ -66,13 +66,14 @@ var _dis = d3.dispatch('hover','showValue', "changetypePaths");
 
     //create a tooltipEnter
      var tooltipEnter = svgEnter.append('g').attr('class','tool-tip');
-        tooltipEnter.append('circle').attr('class','tool-tip-circle').attr('r',5).style('fill', "#fff").style("stroke","#B26D5A");
+        tooltipEnter.append('circle').attr('class','tool-tip-circle').attr('r',5).style('fill', "#fff").style("stroke","#A5BEC4");
         tooltipEnter.append('text').attr('class','tool-tip-text').attr('text-anchor','middle').attr('dy',-5);
 
       //set a area for mouse move
         svgEnter.append('rect').attr('class','mouse-target').attr('transform','translate('+m.l+','+m.t+')')
             .attr('width',chartW)
             .attr('height',chartH)
+            .style("fill", "#f7f7f7")
             .style('fill-opacity',0.05)
             .on('mousemove', function(){
                 //d3.time.scale.invert(y) returns the date in the input domain x -->timerange for the corresponding value in the output range y -->x position

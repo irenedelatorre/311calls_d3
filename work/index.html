@@ -32,21 +32,48 @@
              </div>
          </div>
          <div class="visualizations row">
-         <div class = "mapingBoston col-md-12">
+         <div class = "mappingBoston col-md-12">
              <h2>Location of the calls</h2>
              <p class="lead">The average time to do so amounted to 10 days, having cases of calls that were not solved within the following 50 days or even 300 days (there are cases in the database with no closing date after the end of the year). The neighborhood with more problems of this kind was East Boston, with an average time of 12 days.</p>
              <p class="expltext col-md-3">Each bar represents the number of calls done during a week. Brush over them to know their location in that specific time range. </p>
              <div class="bars col-md-9"><div id="plot_map3"></div></div>
+             <div class="legendElement">
+                 <p class="titleLegendElement">Calls resolved...</p>
+                 <div class="col-md-2">
+                     <div id="min"></div>
+                     <p>Explanation</p>
+                 </div>
+                 <div class="col-md-2">
+                     <div id="mean"></div>
+                     <p>Explanation</p>
+                 </div>
+                 <div class="col-md-2">
+                     <div id="average"></div>
+                     <p>Explanation</p>
+                 </div>
+                 <div class="col-md-2">
+                     <div id="month"></div>
+                     <p>Explanation</p>
+                 </div>
+                 <div class="col-md-2">
+                     <div id="year"></div>
+                     <p>Explanation</p>
+                 </div>
+                 <div class="col-md-2">
+                     <div id="mtyear"></div>
+                     <p>Explanation</p>
+                 </div>
+             </div>
             <div id="plot_map2" class="col-md-12"></div>
          </div>
          <div class="duration col-md-12">
              <h2>How long does it take to close a 311 case?</h2>
              <p>Explore how long it takes to the City of Boston to close a case depending on the neighborhood. </p>
+             <p class="titleLegendElement">In days</p>
              <div id="legend1"></div>
              <div class="custom-tooltip">
                  <p id="value"></p>
              </div>
-             <p class="legendElement">In days</p>
              <div class="plot1" ></div>
          </div>
         <div class="neighborhoods col-md-12">

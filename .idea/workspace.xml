@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="436e7e15-ae44-4021-bd4b-a8bc967dcb3f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/modules/durationseries.js" afterPath="$PROJECT_DIR$/work/modules/durationseries.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/modules/histogram.js" afterPath="$PROJECT_DIR$/work/modules/histogram.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/index.html" afterPath="$PROJECT_DIR$/work/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/modules/mapdotsSeries.js" afterPath="$PROJECT_DIR$/work/modules/mapdotsSeries.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/script.js" afterPath="$PROJECT_DIR$/work/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/style.css" afterPath="$PROJECT_DIR$/work/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -28,18 +32,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/work/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/work/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+            <state vertical-scroll-proportion="-15.384615">
+              <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -48,18 +42,28 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/work/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.137931">
-              <caret line="153" column="1" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
+            <state vertical-scroll-proportion="-11.9827585">
+              <caret line="250" column="19" selection-start-line="250" selection-start-column="19" selection-end-line="250" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mapdotsSeries.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mapdotsSeries.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/work/modules/mapdotsSeries.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7325843">
-              <caret line="122" column="39" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
+            <state vertical-scroll-proportion="-6.448276">
+              <caret line="336" column="39" selection-start-line="336" selection-start-column="39" selection-end-line="336" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="durationseries.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/work/modules/durationseries.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-36.551723">
+              <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,8 +72,8 @@
       <file leaf-file-name="histogram.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/work/modules/histogram.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state vertical-scroll-proportion="-10.793103">
+              <caret line="111" column="8" selection-start-line="111" selection-start-column="8" selection-end-line="120" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -95,6 +99,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/work/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5505226">
+              <caret line="227" column="28" selection-start-line="227" selection-start-column="28" selection-end-line="227" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -105,8 +119,10 @@
       <list>
         <option value="$PROJECT_DIR$/work/scroll.js" />
         <option value="$PROJECT_DIR$/work/modules/histogram.js" />
-        <option value="$PROJECT_DIR$/work/script.js" />
+        <option value="$PROJECT_DIR$/work/modules/durationseries.js" />
+        <option value="$PROJECT_DIR$/work/index.html" />
         <option value="$PROJECT_DIR$/work/style.css" />
+        <option value="$PROJECT_DIR$/work/script.js" />
         <option value="$PROJECT_DIR$/work/modules/mapdotsSeries.js" />
       </list>
     </option>
@@ -147,6 +163,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -213,8 +231,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -238,7 +254,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15104167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -294,6 +310,62 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/work/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="153" column="1" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/modules/mapdotsSeries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/modules/histogram.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/modules/bar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="82" column="9" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/scroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/work/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -453,14 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work/modules/histogram.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/work/modules/bar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -469,34 +533,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work/index.html">
+    <entry file="file://$PROJECT_DIR$/work/modules/histogram.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="41" />
+        <state vertical-scroll-proportion="-10.793103">
+          <caret line="111" column="8" selection-start-line="111" selection-start-column="8" selection-end-line="120" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work/script.js">
+    <entry file="file://$PROJECT_DIR$/work/modules/durationseries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+        <state vertical-scroll-proportion="-36.551723">
+          <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.384615">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/work/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.137931">
-          <caret line="153" column="1" selection-start-line="153" selection-start-column="1" selection-end-line="153" selection-end-column="1" />
+        <state vertical-scroll-proportion="-11.9827585">
+          <caret line="250" column="19" selection-start-line="250" selection-start-column="19" selection-end-line="250" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/work/modules/mapdotsSeries.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7325843">
-          <caret line="122" column="39" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
+        <state vertical-scroll-proportion="-6.448276">
+          <caret line="336" column="39" selection-start-line="336" selection-start-column="39" selection-end-line="336" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5505226">
+          <caret line="227" column="28" selection-start-line="227" selection-start-column="28" selection-end-line="227" selection-end-column="28" />
           <folding />
         </state>
       </provider>

@@ -88,7 +88,7 @@ function dataloaded(err,neighborhood,rows,types) {
     var barchart = d3.allTypeBar()
         .width(wMap2)
         .height(hMap2)
-        .fillColor("rgba(178,109,90,.5)")
+        .fillColor("rgba(165,190,196,.5)")
         .timeRange([new Date(2015,0,1),new Date(2016,0,1)])
         .value(function(d){ return d.startTime;})
         .interval(d3.time.week)
@@ -107,20 +107,143 @@ function dataloaded(err,neighborhood,rows,types) {
 
         });
 
-    var barPlot = d3.select('.container').select('.mapingBoston').select('#plot_map3')
+    var barPlot = d3.select('.container').select('.mappingBoston').select('#plot_map3')
         .datum(callsType)
         .call(barchart);
 
     //dots in map
+    var color1 = "#376E7C"; //in one hour
+    var color2 = "#A5BEC4"; // from one hour to 1 day
+    var color3 = "#EAE3D7"; // from 1 day to the average
+    var color4 = "#F3919A"; // from the average to one month
+    var color5 = "#EF4553"; // from one month to one year
+    var color6 = "#BC000E"; // more than one year
+
+    var legendMap1h = d3.select("#min").append('svg')
+        //.attr('width', (wMap1/6))
+        .append("g")
+        .attr("class", "legend");
+
+    legendMap1h
+        .append('circle')
+        .attr('class', 'legendElement')
+        .attr('cx',5)
+        .attr('cy', 6)
+        .attr('r', 5)
+        .style('fill',color1);
+
+    legendMap1h.append("text")
+        .attr('class', 'legendElement')
+        .text("In one hour")
+        .attr("x", 15)
+        .attr('y', 10);
+
+    var legendMap1d = d3.select("#mean").append('svg')
+        //.attr('width', (wMap1/6))
+        .append("g")
+        .attr("class", "legend");
+
+    legendMap1d
+        .append('circle')
+        .attr('class', 'legendElement')
+        .attr('cx',5)
+        .attr('cy', 6)
+        .attr('r', 5)
+        .style('fill',color2);
+
+    legendMap1d.append("text")
+        .attr('class', 'legendElement')
+        .text("From 1 to 24 hours")
+        .attr("x", 15)
+        .attr('y', 10);
+
+    var legendMap12d = d3.select("#average").append('svg')
+        //.attr('width', (wMap1/6))
+        .append("g")
+        .attr("class", "legend");
+
+    legendMap12d
+        .append('circle')
+        .attr('class', 'legendElement')
+        .attr('cx',5)
+        .attr('cy', 6)
+        .attr('r', 5)
+        .style('fill',color3);
+
+    legendMap12d.append("text")
+        .attr('class', 'legendElement')
+        .text("From 1 to 12 days")
+        .attr("x", 15)
+        .attr('y', 10);
+
+    var legendMap30d = d3.select("#month").append('svg')
+        //.attr('width', (wMap1/6))
+        .append("g")
+        .attr("class", "legend");
+
+    legendMap30d
+        .append('circle')
+        .attr('class', 'legendElement')
+        .attr('cx',5)
+        .attr('cy', 6)
+        .attr('r', 5)
+        .style('fill',color4);
+
+    legendMap30d.append("text")
+        .attr('class', 'legendElement')
+        .text("From 12 to 30 days")
+        .attr("x", 15)
+        .attr('y', 10);
+
+    var legendMap1y = d3.select("#year").append('svg')
+        //.attr('width', (wMap1/6))
+        .append("g")
+        .attr("class", "legend");
+
+    legendMap1y
+        .append('circle')
+        .attr('class', 'legendElement')
+        .attr('cx',5)
+        .attr('cy', 6)
+        .attr('r', 5)
+        .style('fill',color5);
+
+    legendMap1y.append("text")
+        .attr('class', 'legendElement')
+        .text("From 30 to 365 days")
+        .attr("x", 15)
+        .attr('y', 10);
+
+    var legendMap366 = d3.select("#mtyear").append('svg')
+        //.attr('width', (wMap1/6))
+        .append("g")
+        .attr("class", "legend");
+
+    legendMap366
+        .append('circle')
+        .attr('class', 'legendElement')
+        .attr('cx',5)
+        .attr('cy', 6)
+        .attr('r', 5)
+        .style('fill',color6);
+
+    legendMap366.append("text")
+        .attr('class', 'legendElement')
+        .text("In more than 365 days")
+        .attr("x", 15)
+        .attr('y', 10);
+
+
+    
+    
     var mapModuleDots = d3.mapDotsSeries(neighborhood)
         .width(wMap1)
         .height(hMap1)
         .scale(220000);
 
-    d3.select(".container").select(".mapingBoston").select('#plot_map2').append('canvas')
-
-
-    var plot_mapDots = d3.select(".container").select(".mapingBoston").select('#plot_map2')
+    d3.select(".container").select(".mappingBoston").select('#plot_map2').append('canvas')
+    
+    var plot_mapDots = d3.select(".container").select(".mappingBoston").select('#plot_map2')
         .datum(callsType)
         .call(mapModuleDots);
 
@@ -133,7 +256,7 @@ function dataloaded(err,neighborhood,rows,types) {
     //dots
     //legend
     // draw legend
-    legendData = [{color: "#ED1C24", dotType: "Maximum duration"}, {color: "#00ADDC", dotType: "Minimum duration"}, {color: "#B26D5A", dotType: "Mean duration"}, {color: "#629195", dotType: "Median duration"}];
+    legendData = [{color: "#BC000E", dotType: "Maximum duration"}, {color: "#F3919A", dotType: "Median duration"}, {color: "#A5BEC4", dotType: "Mean duration"}, {color: "#376E7C", dotType: "Minimum duration"}];
 
     var legend = d3.select(".container").select('#legend1').append('svg')
         .attr('width', w1)
@@ -151,6 +274,7 @@ function dataloaded(err,neighborhood,rows,types) {
         .style('fill', function (d) {
             return d.color;
         });
+
 
     legend.append("text")
         .attr('class', 'legendElement')

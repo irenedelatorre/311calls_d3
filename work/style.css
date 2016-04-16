@@ -22,7 +22,7 @@
     overflow: hidden;
     float: left;
     margin-bottom: 30px;
-    color: #B26D5A;
+    color: #A5BEC4;
     min-height: 90px;
     border-bottom: 1px solid;
     padding-top: 10px;
@@ -50,7 +50,7 @@ h1 {
 h2 small {
     font-weight: 300;
     line-height: 1;
-    color: #B26D5A;
+    color: #A5BEC4;
 }
 
 .lead{
@@ -73,11 +73,21 @@ h2 small {
     font-weight: bold;
 }
 .expltext {
-    color: #B26D5A;
+    color: #A5BEC4;
 }
 
-.mapingBoston .expltext {
+.mappingBoston .expltext {
     padding-left: 0 !important;
+}
+.legendElement svg{
+    overflow: auto;
+    height: 20px;
+}
+.legendElement .col-md-2 {
+    padding-left:0px;
+}
+.mappingBoston .legendElement{
+    font-size: 14px;
 }
 /*------------plot 2-------------*/
 
@@ -105,18 +115,18 @@ h2 small {
 
 
 .area{
-    fill:#B26D5A;
+    fill: #A5BEC4;
     opacity: 0.1;
 }
 .line{
     fill:none;
-    stroke:#B26D5A;
+    stroke: #A5BEC4;
     stroke-width:1px;
     opacity:1;
 }
 
-.mouse-target {
-    color:#f7f7f7;
+rect .mouse-target {
+    fill-opacity: 0;
 }
 
 #plot_map3 {
@@ -171,7 +181,7 @@ canvas {
 .bars{
     margin-top: -40px;
 }
-.mapingBoston h2, .duration h2, .neighborhoods h2{
+.mappingBoston h2, .duration h2, .neighborhoods h2{
     margin-bottom:30px;
 }
 /*------------plot 1-------------*/
@@ -183,12 +193,14 @@ canvas {
     height: 30px;
     padding-top: 10px;
 }
-#legend1 .row {
 
+.legendElement {
+    font-size: 12px;
+    color: #999;
 }
-
-text .legendElement {
-    fill: #999;
+.titleLegendElement{
+    font-weight: bold;
+    color: #333;
 }
 .plot1 {
     width:100%;
@@ -212,31 +224,31 @@ text .legendElement {
 }
 
 .dotsMax {
-    fill:#ED1C24;
+    fill:#BC000E;
     stroke:#fff;
     stroke-width:1px;
 }
 
 .dotsMin {
-    fill:#00ADDC;
+    fill:#376E7C;
     stroke:#fff;
     stroke-width:1px;
 }
 
 .dotsMean {
-    fill:#B26D5A;
+    fill:#F3919A;
     stroke:#fff;
     stroke-width:1px;
 }
 
 .dotsMedian {
-    fill:#629195;
+    fill:#A5BEC4;
     stroke:#fff;
     stroke-width:1px;
 }
 .dotsRange {
     fill: none;
-    stroke: #ED1C24;
+    stroke: #BC000E;
     stroke-width: 1px;
     shape-rendering: crispEdges;
 }
