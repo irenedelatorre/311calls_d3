@@ -70,19 +70,18 @@ function dataloaded(err,neighborhood,rows,types) {
     var callsByTime = calls.dimension(function(d){return d.startTime});
 
     callsType = callsByType.filterAll().top(Infinity);
-    callsType.sort(function (a, b) {
-        return a.duration - b.duration;
-    });
-
+    //callsType.sort(function (a, b) {
+    //    return a.neighbor - b.neighbor;
+    //});
     //nest by type and then by neighborhood
     var nestedNeighborhood = d3.nest()
         .key(function (d) {
             return name = d.neighbor
         })
+        .sortKeys(d3.ascending)
         .entries(callsType);
 
     var neighborhoodsNames = nestedNeighborhood.map(function (d) {return d.key});
-
 
     //barchart
     var barchart = d3.allTypeBar()
@@ -210,7 +209,7 @@ function dataloaded(err,neighborhood,rows,types) {
 
     legendMap1y.append("text")
         .attr('class', 'legendElement')
-        .text("From 30 to 365 days")
+        .text("From 30 to 89 days")
         .attr("x", 15)
         .attr('y', 10);
 
@@ -229,7 +228,7 @@ function dataloaded(err,neighborhood,rows,types) {
 
     legendMap366.append("text")
         .attr('class', 'legendElement')
-        .text("In more than 365 days")
+        .text("In more than 90 days")
         .attr("x", 15)
         .attr('y', 10);
 
@@ -315,7 +314,7 @@ function dataloaded(err,neighborhood,rows,types) {
                 .value(function (d) {
                     return d.startTime;
                 })
-                .maxY(2000)
+                .maxY(1500)
                 .binSize(d3.time.week)
                 .on('hover', function (t) {
                     globalDispatch.pickTime(t);
@@ -335,28 +334,26 @@ function dataloaded(err,neighborhood,rows,types) {
 
     //Dispatch function
     globalDispatch.on("changetype", function (type) {
-        var neighborhoodsNames = ["East Boston", "Hyde Park", "Roslindale", "Dorchester", "Greater Mattapan", "Beacon Hill", "Roxbury", "Allston / Brighton", "South End", "West Roxbury", "Mission Hill", "Fenway / Kenmore / Audubon Circle / Longwood", "Charlestown", "Downtown / Financial District", "Jamaica Plain", "South Boston / South Boston Waterfront", "Boston", "Back Bay", "Unknown", "Brighton", "Chestnut Hill"];
+        var neighborhoodsNames = ["Allston / Brighton", "Back Bay", "Beacon Hill", "Boston", "Brighton", "Charlestown", "Chestnut Hill", "Dorchester", "Downtown / Financial District", "East Boston", "Fenway / Kenmore / Audubon Circle / Longwood", "Greater Mattapan", "Hyde Park", "Jamaica Plain", "Mission Hill", "Roslindale", "Roxbury", "South Boston / South Boston Waterfront", "South End", "Unknown", "West Roxbury"]
 
         callsByType.filterAll();
-        if ("option" == "All") {
+        if (type == "All") {
             console.log("all");
             callsType = callsByType.filterAll().top(Infinity);
-            callsType.sort(function (a, b) {
-                return a.startTime - b.startTime;
-            });
+
+
         } else {
             callsType = callsByType.filter(type).top(Infinity);
-            callsType.sort(function (a, b) {
-                return a.duration - b.duration;
-            });
+
         };
 
         var nestedNeighborhoodInDispatch = d3.nest()
             .key(function (d) {
                 return name = d.neighbor
             })
+            .sortKeys(d3.ascending)
             .entries(callsType);
-
+        
         durationModule
             .names(neighborhoodsNames);
 
@@ -366,7 +363,7 @@ function dataloaded(err,neighborhood,rows,types) {
         if (type == "Request for Snow Plowing" || type == "All" || type == "Missed Trash/Recycling/Yard Waste/Bulk Item") {
             var barchartInDispatch = barchart
                 .maxScaleY(12000);
-             var newY = 1000;
+             var newY = 1500;
         } else {
             var barchartInDispatch = barchart
                 .maxScaleY(800);

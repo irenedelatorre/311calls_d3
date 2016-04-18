@@ -11,6 +11,7 @@ var _dis = d3.dispatch('hover','showValue', "changetypePaths");
     color = "#ababab",
     timeRange = [new Date(), new Date()], //default timeRange
     binSize = d3.time.day,
+      neighborhoodsNames = [],
     maxY = 200, //maximum number of trips to show on the y axis
     scaleX = d3.time.scale().range([0,chartW]).domain(timeRange),
     scaleY = d3.scale.linear().range([chartH,0]).domain([0,200]),
@@ -159,6 +160,11 @@ var _dis = d3.dispatch('hover','showValue', "changetypePaths");
     exports.fillColor = function(_color){
         if(!arguments.length) return color;
         color = _color;
+        return this;
+    };
+    exports.names = function(_neighborhoodsNames){
+        if(!arguments.length) return neighborhoodsNames;
+        neighborhoodsNames = _neighborhoodsNames;
         return this;
     };
     d3.rebind(exports, _dis, 'on', 'showValue', "on");

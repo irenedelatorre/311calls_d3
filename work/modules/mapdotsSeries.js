@@ -299,17 +299,18 @@ d3.mapDotsSeries = function (neighborhoods){
 
 
                 if (d.duration < oneHour ) {
-                    var myColor = color1;
+                    var myColor = color1; //13,374 calls
                 }else if (d.duration>oneHour && d.duration<1){
-                    var myColor = color2;
+                    var myColor = color2; //65.991 calls
                 }else if (d.duration>1 && d.duration<12){
-                    var myColor=color3
+                    var myColor=color3 //71661 calls
                 }else if (d.duration>12 && d.duration<30){
-                    var myColor = color4;
-                }else if (d.duration<30 && d.duration<360){
-                    var myColor = color5;
-                }else if (d.duration>360) {
-                    var myColor = color6;
+                    var myColor = color4; //20551 calls
+                }else if (d.duration>30 && d.duration<90){
+                    var myColor = color5; //17164 calls
+                }else if (d.duration>90) {
+                    //console.log("d")
+                    var myColor = color6; //4542 calls
                 }
 
                 var xy = projection(d.lngLat);
