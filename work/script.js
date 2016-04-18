@@ -28,7 +28,7 @@ var neighborhood_name = [];
 
 //draw
 function dataloaded(err,neighborhood,rows,types) {
-    //console.log(rows)
+
 
     d3.select(".type-list").on("change", function () {
         globalDispatch.changetype(this.value);
@@ -314,7 +314,7 @@ function dataloaded(err,neighborhood,rows,types) {
                 .value(function (d) {
                     return d.startTime;
                 })
-                .maxY(1500)
+                .maxY(1800)
                 .binSize(d3.time.week)
                 .on('hover', function (t) {
                     globalDispatch.pickTime(t);
@@ -331,6 +331,8 @@ function dataloaded(err,neighborhood,rows,types) {
                 .text(d.key);
 
         });
+
+    d3.select(".loading").remove();
 
     //Dispatch function
     globalDispatch.on("changetype", function (type) {
@@ -353,7 +355,7 @@ function dataloaded(err,neighborhood,rows,types) {
             })
             .sortKeys(d3.ascending)
             .entries(callsType);
-        
+
         durationModule
             .names(neighborhoodsNames);
 
@@ -363,7 +365,7 @@ function dataloaded(err,neighborhood,rows,types) {
         if (type == "Request for Snow Plowing" || type == "All" || type == "Missed Trash/Recycling/Yard Waste/Bulk Item") {
             var barchartInDispatch = barchart
                 .maxScaleY(12000);
-             var newY = 1500;
+             var newY = 1800;
         } else {
             var barchartInDispatch = barchart
                 .maxScaleY(800);
@@ -420,6 +422,7 @@ function parse(d){
 		neighbor: d.neighborhood,
         lngLat: [+d.LONGITUDE, +d.LATITUDE]
 	}
+
 
 
 }
