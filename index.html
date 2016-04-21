@@ -3,11 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>final work</title>
-        <link rel="stylesheet" href="style.css"/>
-        <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="../global.css"/>
-        <link rel="stylesheet" href="style.css"/>
-        
+        <link rel="stylesheet" href="work/style.css"/>
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="global.css"/>
+        <link rel="stylesheet" href="work/style.css"/>
     </head>
     <body>
 
@@ -16,8 +15,8 @@
              <p>Loading...</p>
          </div>
          <div class="titles row">
-             <h1 class="col-md-12">Visualizing 213,209 Nonemergency calls</h1>
-             <h2 class="col-md-12"><small>A study of all 311 calls that bostonians did during 2015</small></h2>
+             <h1 class="col-md-12">Visualizing 213,209 Nonemergency Calls</h1>
+             <h2 class="col-md-12"><small>A study of all 311 calls that Bostonians did during 2015</small></h2>
              <div class="intro col-md-6">
                  <p><span class="authors">By Fu Xiangyi and Irene de la Torre-Arenas</span> | April 2016</p>
                  <p>Data Visualization Workshop (Spring2016). Mentored by Siqi Zhu. | Northeastern University</p>
@@ -38,7 +37,11 @@
          <div class = "mappingBoston col-md-12">
              <h2>Location of the calls</h2>
              <p class="lead">The average time to do so amounted to 10 days, having cases of calls that were not solved within the following 50 days or even 300 days (there are cases in the database with no closing date after the end of the year). The neighborhood with more problems of this kind was East Boston, with an average time of 12 days.</p>
-             <p class="expltext col-md-3">Each bar represents the number of calls done during a week. Brush over them to know their location in that specific time range. </p>
+             <p class="titleLegendElement">Number of calls per week <span class="hahaha">
+            <span class ="inside">The scale of the graphs changes when all types of calls are shown, or when 'Request for Snow Plowing' or 'Missed Trash/Recycling/Yard Waste/Bulk Item' are selected, due to vast number of number of complains filed by extending the axis.
+            </span>
+            </span></p>
+             <p class="expltext col-md-3">Each bar represents the number of calls done during a week. Brush over them to know their location in that specific time range</p>
              <div class="bars col-md-9"><div id="plot_map3"></div></div>
              <div class="legendElement">
                  <p class="titleLegendElement">Calls resolved...</p>
@@ -48,15 +51,15 @@
                  </div>
                  <div class="col-md-2">
                      <div id="mean" class="legendElement"></div>
-                     <p><span class="bold">30%</span> of all the cases<br/>were closed in one day</p>
+                     <p><span class="bold">30%</span> of all the cases were closed in one day</p>
                  </div>
                  <div class="col-md-2">
                      <div id="average" class="legendElement"></div>
-                     <p>The mean time to close<br/>a case was<span class="bold">10 days</span></p>
+                     <p>The mean time to close a case was<span class="bold"> 10 days</span></p>
                  </div>
                  <div class="col-md-2">
                      <div id="month" class="legendElement"></div>
-                     <p>Almost <span class="bold">1 out of 10 cases</span>(9,9%)</p>
+                     <p>Almost <span class="bold">1 out of 10 cases</span> (9,9%)</p>
                  </div>
                  <div class="col-md-2">
                      <div id="year" class="legendElement"></div>
@@ -82,6 +85,10 @@
         <div class="neighborhoods col-md-12">
             <h2>Do the calls change from neighborhood to neighborhood?</h2>
             <p>Explore which types of calls had each neighborhood and when. Hover over the diagrams to know the how many calls from each neighborhood there were each week last year.</p>
+            <p class="titleLegendElement">Number of calls per week <span class="hahaha">
+            <span class ="inside">The scale of the graphs changes when all types of calls are shown, or when 'Request for Snow Plowing' or 'Missed Trash/Recycling/Yard Waste/Bulk Item' are selected, due to vast number of number of complains filed by extending the axis.
+            </span>
+            </span></p>
             <div class="plot2" ></div>
         </div>
          </div>
@@ -90,14 +97,14 @@
         <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
         <script src="//d3js.org/topojson.v1.min.js"></script>
         <script src="https://d3js.org/d3-queue.v2.min.js"></script>
-        <script src="../lib/jquery/jquery-1.11.1.min.js"></script>
-        <script src="../lib/crossfilter/crossfilter.js"></script>
-        <script src="scroll.js"></script>
-        <script src="modules/durationseries.js"></script>
-        <script src="modules/histogram.js"></script>
-        <script src="modules/mapdotsSeries.js"></script>
-        <script src="modules/bar.js"></script>
-        <script src="script.js"></script>
+        <script src="lib/jquery/jquery-1.11.1.min.js"></script>
+        <script src="lib/crossfilter/crossfilter.js"></script>
+        <script src="work/scroll.js"></script>
+        <script src="work/modules/durationseries.js"></script>
+        <script src="work/modules/histogram.js"></script>
+        <script src="work/modules/mapdotsSeries.js"></script>
+        <script src="work/modules/bar.js"></script>
+        <script src="work/script.js"></script>
     </body>
 
 </html>

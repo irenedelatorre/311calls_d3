@@ -327,8 +327,12 @@ function dataloaded(err,neighborhood,rows,types) {
             d3.select(this).datum(d.values)
                 .call(timeSeries)
                 .append('p')
+                .text(d.key)
                 .attr("class","neighborhood-names")
-                .text(d.key);
+                .style("fill","fff")
+                .transition()
+                .duration(500)
+                .style("fill","#333");
 
         });
 
@@ -336,14 +340,15 @@ function dataloaded(err,neighborhood,rows,types) {
 
     //Dispatch function
     globalDispatch.on("changetype", function (type) {
+        d3.select('.container').select(".neighborhoods").selectAll('.plot2').selectAll('p').remove();
+        d3.select('.container').select(".neighborhoods").selectAll('.plot2').selectAll('svg').remove();
+
+
         var neighborhoodsNames = ["Allston / Brighton", "Back Bay", "Beacon Hill", "Boston", "Brighton", "Charlestown", "Chestnut Hill", "Dorchester", "Downtown / Financial District", "East Boston", "Fenway / Kenmore / Audubon Circle / Longwood", "Greater Mattapan", "Hyde Park", "Jamaica Plain", "Mission Hill", "Roslindale", "Roxbury", "South Boston / South Boston Waterfront", "South End", "Unknown", "West Roxbury"]
 
         callsByType.filterAll();
         if (type == "All") {
-            console.log("all");
             callsType = callsByType.filterAll().top(Infinity);
-
-
         } else {
             callsType = callsByType.filter(type).top(Infinity);
 
@@ -381,6 +386,7 @@ function dataloaded(err,neighborhood,rows,types) {
 
         mapModuleDots.shape(callsByTime.filter(type).top(Infinity));
 
+
         var plots2 = d3.select('.container').selectAll('.plot2')
             .data(nestedNeighborhoodInDispatch);
 
@@ -404,13 +410,22 @@ function dataloaded(err,neighborhood,rows,types) {
                 });
 
                 d3.select(this).datum(d.values)
-                    .call(timeSeries2);
+                    .call(timeSeries2)
+                    .append("p")
+                    .text(d.key)
+                    .attr("class","neighborhood-names")
+                    .style("fill","fff")
+                    .transition()
+                    .duration(500)
+                    .style("fill","#333");
             });
+
 
 
 
     });
 }
+
 
 // parse data
 function parse(d){

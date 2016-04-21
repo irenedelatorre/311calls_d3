@@ -1,3 +1,11 @@
+body{
+font-family: "Helvetica Neue","Helvetica Neue LT Std",Helvetica,Arial,sans-serif;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
 .loading {
     width:100%;
     height: 100%;
@@ -106,7 +114,11 @@ h2 small {
     padding-left:0px;
 }
 .mappingBoston .legendElement{
-    font-size: 14px;
+    font-size: 12px;
+}
+
+.mappingBoston p {
+    padding-right: 5px;
 }
 /*------------plot 2-------------*/
 
@@ -123,10 +135,10 @@ h2 small {
 }
 
 .plot2 .neighborhood-names {
-    font-family: Helvetica Neue, Helvetica, Arial;
+
     position: relative;
     font-size: 12px;
-    color: #333;
+    /*color: #333;*/
     font-weight: normal;
     margin-top: 0px;
     margin-bottom: 10px;
@@ -134,12 +146,12 @@ h2 small {
 
 
 .area{
-    fill: #A5BEC4;
+    /*fill: #A5BEC4;*/
     opacity: 0.1;
 }
 .line{
     fill:none;
-    stroke: #A5BEC4;
+    /*stroke: #A5BEC4;*/
     stroke-width:1px;
     opacity:1;
 }
@@ -157,6 +169,11 @@ rect .mouse-target {
     stroke: #fff;
     fill-opacity: .125;
     shape-rendering: crispEdges;
+}
+
+.neighborhoods .col-md-8, .mappingBoston .col-md-8 {
+    padding-left: 0 !important;
+    float: none !important;
 }
 /*------------map-------------*/
 
@@ -201,7 +218,7 @@ canvas {
     margin-top: -40px;
 }
 .mappingBoston h2, .duration h2, .neighborhoods h2{
-    margin-bottom:30px;
+    margin-bottom: 15px;
 }
 
 .bold {
@@ -275,4 +292,37 @@ canvas {
     stroke: #BC000E;
     stroke-width: 1px;
     shape-rendering: crispEdges;
+}
+
+/* information icon  */
+span.hahaha {
+    z-index: 100;
+    background-color: transparent;
+    width: 15px;
+    display: inline-block;
+    height: 15px;
+    margin-right: 1px;
+    background-image: url(../img/information02.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+span.hahaha:hover .inside {
+    display: block;
+    background-color: rgba(165,190,196,0.9);
+}
+
+span.hahaha .inside {
+    z-index: 100;
+    position: absolute;
+    display: none;
+    width:200px;
+    background-color: rgba(165,190,196,0.9);
+    padding: 10px;
+}
+.hahaha span {
+    font-weight: normal;
+    font-size: 12px !important;
+    color: white;
+
 }

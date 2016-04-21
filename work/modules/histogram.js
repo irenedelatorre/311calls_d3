@@ -60,7 +60,8 @@ var _dis = d3.dispatch('hover','showValue', "changetypePaths");
     var svg = d3.select(this).selectAll('svg')
       .data([d]);
 
-    var svgEnter = svg.enter().append('svg')
+    var svgEnter = svg.enter().append('svg');
+
     svgEnter.append('g').attr('class','area').attr('transform','translate('+m.l+','+m.t+')').append('path');
     svgEnter.append('g').attr('class','line').attr('transform','translate('+m.l+','+m.t+')').append('path');
     svgEnter.append('g').attr('class','axis').attr('transform','translate('+m.l+','+(m.t+chartH)+')');
@@ -89,12 +90,16 @@ var _dis = d3.dispatch('hover','showValue', "changetypePaths");
 
     //Step 2: create layers of DOM individually
     //2.1 line graph
-    svg.select('.line')
-      .select('path')
-      .datum(_d)
-        //.transition()
-        //.duration(1000)
-      .attr('d',line);
+       svg.select('.line')
+            .select("path")
+            .datum(_d)
+            .attr('d',line)
+           .style("stroke","fff")
+           .transition()
+           .duration(500)
+           .style("stroke","#A5BEC4");
+
+
 
     //2.2 area
     svg.select('.area')
@@ -102,7 +107,11 @@ var _dis = d3.dispatch('hover','showValue', "changetypePaths");
       .datum(_d)
         //.transition()
         //.duration(1000)
-      .attr('d',area);
+      .attr('d',area)
+        .style("fill","fff")
+        .transition()
+        .duration(500)
+        .style("fill","#A5BEC4");
 
 
         //2.3 horizontal axis
