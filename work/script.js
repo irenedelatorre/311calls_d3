@@ -60,7 +60,7 @@ function dataloaded(err,neighborhood,rows,types) {
         return d.duration}else{return 0}
     });
 
-    console.log("all, max:"+ max + ", min" + min + ", mean"+ mean +" median" + median)
+    //console.log("all, max:"+ max + ", min" + min + ", mean"+ mean +" median" + median)
 
     var data = rows;
     var calls = crossfilter(data);
@@ -70,15 +70,15 @@ function dataloaded(err,neighborhood,rows,types) {
     var callsByTime = calls.dimension(function(d){return d.startTime});
 
     callsType = callsByType.filterAll().top(Infinity);
-    //callsType.sort(function (a, b) {
-    //    return a.neighbor - b.neighbor;
-    //});
-    //nest by type and then by neighborhood
+    callsType.sort(function (a, b) {
+        return a.duration - b.duration;
+    });
+
     var nestedNeighborhood = d3.nest()
         .key(function (d) {
             return name = d.neighbor
         })
-        .sortKeys(d3.ascending)
+        //.sortKeys(d3.ascending)
         .entries(callsType);
 
     var neighborhoodsNames = nestedNeighborhood.map(function (d) {return d.key});
@@ -353,6 +353,9 @@ function dataloaded(err,neighborhood,rows,types) {
             callsType = callsByType.filter(type).top(Infinity);
 
         };
+        callsType.sort(function (a, b) {
+            return a.duration - b.duration;
+        });
 
         var nestedNeighborhoodInDispatch = d3.nest()
             .key(function (d) {
@@ -377,6 +380,8 @@ function dataloaded(err,neighborhood,rows,types) {
 
             var newY = 50;
         };
+
+        d3.select('.brush').call(brush.clear());
 
         barPlot.datum(callsType)
             .call(barchartInDispatch);
@@ -445,7 +450,7 @@ function parse(d){
 function parseType(n){
     d3.select(".type-list") //class in the html file
         .append("option") //it has to be called this name
-        .html(n.type)
+        .html(n.type + " (" + n.number + ")")
         .attr("value", n.type)
 }
 

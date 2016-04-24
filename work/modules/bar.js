@@ -112,15 +112,21 @@ var _dis = d3.dispatch('changetime','changetype');
           .attr('height',chartH);
 
       function brushed(){
+
           bars.attr('class','bar')
               .filter(function(d){
                   return d.x >= brush.extent()[0] && d.x <= brush.extent()[1];
-              })
-              .attr('class','bar highlight');
+              });
+
       }
 
       function brushend(){
-          _dis.changetime(brush.extent());
+          //console.log(brush.extent())
+          var wholedate =[new Date(2015,0,1),new Date(2016,0,1)]
+          var extent = brush.empty() ?  wholedate: brush.extent()
+
+          _dis.changetime(extent);
+
       }
          
 

@@ -31,22 +31,22 @@ function exports (_selection){
     function draw (data){
 
         //console.log(data);
-        data.forEach(function(d,i){
-            var mean = d3.mean(d.values,function(neighborhood){if (neighborhood.duration>=0) {
-                return neighborhood.duration}else{return 0}
-            });
-            var median = d3.median(d.values,function(neighborhood){if (neighborhood.duration>=0) {
-                return neighborhood.duration}else{return 0}
-            });
-            var max = d3.max(d.values,function(neighborhood){if (neighborhood.duration>=0) {
-                return neighborhood.duration}else{return 0}
-            });
-            var min = d3.min(d.values,function(neighborhood){if (neighborhood.duration>=0) {
-                return neighborhood.duration}else{return 0}
-            });
-
-            console.log(d.key + " mean:" + mean + ", median:" + median + ", max" + max + ", min" +min );
-        });
+        //data.forEach(function(d,i){
+        //    var mean = d3.mean(d.values,function(neighborhood){if (neighborhood.duration>=0) {
+        //        return neighborhood.duration}else{return 0}
+        //    });
+        //    var median = d3.median(d.values,function(neighborhood){if (neighborhood.duration>=0) {
+        //        return neighborhood.duration}else{return 0}
+        //    });
+        //    var max = d3.max(d.values,function(neighborhood){if (neighborhood.duration>=0) {
+        //        return neighborhood.duration}else{return 0}
+        //    });
+        //    var min = d3.min(d.values,function(neighborhood){if (neighborhood.duration>=0) {
+        //        return neighborhood.duration}else{return 0}
+        //    });
+        //
+        //    console.log(d.key + " mean:" + mean + ", median:" + median + ", max" + max + ", min" +min );
+        //});
 
 
         //AXIS

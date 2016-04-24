@@ -69,11 +69,8 @@ d3.mapDotsSeries = function (neighborhoods){
         });
 
 
-
         //question!! how brush work?? and how to clear the canvas dots at the end
         _dis.on("shape",function(t){
-
-
 
             ctx.clearRect(0,0,w,h);
             ctx.lineWidth = 2;
@@ -82,8 +79,6 @@ d3.mapDotsSeries = function (neighborhoods){
             ctx.strokeStyle = "rgb(221, 223, 227)";
             //ctx.fill();
             ctx.stroke();
-
-
 
             (neighborhoods.features).forEach(function(d){
                 var nameX = path.centroid(d)[0];
@@ -277,19 +272,24 @@ d3.mapDotsSeries = function (neighborhoods){
 
             if (t.length > 0){
 
-                var endDate = t[0].startTime,
-                    startDate = t[(t.length)-1].startTime;
+                //Crossfilter range filters selecting the objects that are the same or equal to the first value and LESS than the second one.
+                // This means that the last call in our array cannot be selected if we don't change a bit the last value (adding 1 second)
+                var tEndMiliseconds = Math.abs(t[0].startTime) + 1000;
+                var tEndDate = new Date (tEndMiliseconds);
 
-                var callsNewTimeRange = callsByTime.filter([startDate,endDate]).top(Infinity);
+                var end = tEndDate,
+                    start = t[(t.length)-1].startTime;
 
             } if (t.length ==0){
-                var endDate = new Date ('January 01, 2015 00:00:00'),
-                    startDate = new Date ('January 01, 2016 00:00:00');
+                var end = new Date ('January 01, 2015 00:00:00'),
+                    start = new Date ('January 01, 2016 00:00:00');
+
             };
+
+            var callsNewTimeRange = callsByTime.filter([start,end]).top(Infinity);
 
             //draw every call as a dot
             callsNewTimeRange.forEach(function (d){
-
                 var color1 = "#376E7C"; //in one hour
                 var color2 = "#A5BEC4"; // from one hour to 1 day
                 var color3 = "#EAE3D7"; // from 1 day to the average
@@ -299,6 +299,7 @@ d3.mapDotsSeries = function (neighborhoods){
 
 
                 if (d.duration < oneHour ) {
+
                     var myColor = color1; //13,374 calls
                 }else if (d.duration>oneHour && d.duration<1){
                     var myColor = color2; //65.991 calls
@@ -307,11 +308,12 @@ d3.mapDotsSeries = function (neighborhoods){
                 }else if (d.duration>12 && d.duration<30){
                     var myColor = color4; //20551 calls
                 }else if (d.duration>30 && d.duration<90){
+
                     var myColor = color5; //17164 calls
                 }else if (d.duration>90) {
                     //console.log("d")
                     var myColor = color6; //4542 calls
-                }
+                };
 
                 var xy = projection(d.lngLat);
                 var callstartTime = d.startTime.getTime();
