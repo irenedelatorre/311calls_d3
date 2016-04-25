@@ -36,12 +36,17 @@ d3.mapDotsSeries = function (neighborhoods){
             .translate([(chartW/2),((chartH/2)+200)])
             .scale(scale);
 
-        var canvas = d3.select(this).select('canvas')
+        // Select old canvases to remove after fade.
+        var canvas0 = d3.selectAll("canvas");
+
+        var canvas1 = d3.select(this).insert('canvas')
             .attr('width',chartW)
             .attr('height',chartH)
-            .attr("transform","translate("+m.l+","+ m.t+")");
+            .attr("transform","translate("+m.l+","+ m.t+")")
+            .style("opacity",0);
 
-        ctx = canvas.node().getContext('2d');
+        ctx = canvas1.node().getContext('2d');
+        ctx.fillStyle = "#fff";
 
         path = d3.geo.path()
             .projection(projection)
@@ -288,15 +293,16 @@ d3.mapDotsSeries = function (neighborhoods){
 
             var callsNewTimeRange = callsByTime.filter([start,end]).top(Infinity);
 
+            var color1 = "#376E7C"; //in one hour
+            var color2 = "#A5BEC4"; // from one hour to 1 day
+            var color3 = "#EAE3D7"; // from 1 day to the average
+            var color4 = "#F3919A"; // from the average to one month
+            var color5 = "#EF4553"; // from one month to one year
+            var color6 = "#BC000E"; // more than one year
+
             //draw every call as a dot
             callsNewTimeRange.forEach(function (d){
-                var color1 = "#376E7C"; //in one hour
-                var color2 = "#A5BEC4"; // from one hour to 1 day
-                var color3 = "#EAE3D7"; // from 1 day to the average
-                var color4 = "#F3919A"; // from the average to one month
-                var color5 = "#EF4553"; // from one month to one year
-                var color6 = "#BC000E"; // more than one year
-
+                var mySize = 1.5;
 
                 if (d.duration < oneHour ) {
 
@@ -321,11 +327,8 @@ d3.mapDotsSeries = function (neighborhoods){
                 //var myColor = scaleColor(d.duration);
                 //var mySize = scaleSize(d.duration);
 
-                var mySize = 1.5;
                 ctx.globalAlpha=0.5;
                 ctx.beginPath();
-                ctx.strokeStyle = "rgba(0,0,0,0.1)";
-                ctx.lineWidth = 0.01;
                 ctx.fillStyle = myColor;
                 ctx.arc(xy[0],xy[1],mySize,0,Math.PI*2); //(x,y,r,sAngle,eAngel,counterclockwise)
                 ctx.fill();
@@ -333,6 +336,13 @@ d3.mapDotsSeries = function (neighborhoods){
                 ctx.globalAlpha=1;
 
             });
+
+            canvas1.transition()
+                .duration(350)
+                .style("opacity", 1)
+                .each("end", function() { canvas0.remove(); });
+
+
 
             (neighborhoods.features).forEach(function(d){
                 var nameX = path.centroid(d)[0];
@@ -483,9 +493,11 @@ d3.mapDotsSeries = function (neighborhoods){
                     ctx.stroke()
                 };
 
-
             });
+
+
         });
+
 
     }
 
