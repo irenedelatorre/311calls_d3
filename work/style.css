@@ -1,0 +1,328 @@
+body{
+font-family: "Helvetica Neue","Helvetica Neue LT Std",Helvetica,Arial,sans-serif;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+.loading {
+    width:100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    /*background-color:rgba(255,255,255,0.9);*/
+    z-index: 200;
+    background: rgba(255,255,255,0.9) url("../img/482.gif") no-repeat 50% 50%;
+    animation-duration: initial;
+    animation-play-state: running;
+}
+.loading p {
+    top:50px;
+    font-size:18px;
+    color: #666;
+    text-align: center;
+    padding-top:20%;
+}
+.titles{
+    height: 350px;
+    max-width: 1170px;
+
+}
+
+.main-nav-scrolled {
+    position: fixed !important;
+    top: 0;
+    padding-top: 15px !important;
+}
+
+.visualizations-scrolled{
+    margin-top: 150px;
+}
+
+.main-nav {
+    z-index: 150;
+    width: 103%;
+    max-width: 1170px;
+    background: #fff !important;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 30px;
+    color: #A5BEC4;
+    min-height: 90px;
+    border-bottom: 1px solid;
+    padding-top: 10px;
+}
+
+.main-nav .col-md-3 {
+    margin-left:-15px;
+}
+.controls {
+    float: left;
+    border-bottom: none !important;
+    margin-left: 20px;
+    margin-right:20px;
+    margin-top: 10px;
+    height: auto;
+}
+
+h1 {
+    width: 100%;
+    font-weight: bold;
+    font-size: 50px;
+    color: #333;
+}
+
+h2 small {
+    font-weight: 300;
+    line-height: 1;
+    color: #A5BEC4;
+}
+
+.lead{
+
+    font-size:16px;
+}
+.topfixed p {
+    float:left;
+}
+.intro {
+    padding-top:10px;
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.intro p {
+    line-height: 1.2;
+}
+.authors{
+    font-weight: bold;
+}
+.expltext {
+    color: #A5BEC4;
+}
+
+.mappingBoston .expltext {
+    padding-left: 0 !important;
+}
+.legendElement svg{
+    overflow: auto;
+    height: 20px;
+}
+.legendElement .col-md-2 {
+    padding-left:0px;
+}
+.mappingBoston .legendElement{
+    font-size: 12px;
+}
+
+.mappingBoston p {
+    padding-right: 5px;
+}
+/*------------plot 2-------------*/
+
+.plot2{
+    width: 20%;
+    height: 150px;
+    padding-right: 30px;
+    padding-left: 30px;
+    /* margin: 10px 0; */
+    background: white;
+    float: left;
+    margin-bottom: 40px;
+    /* margin-left: 15px; */
+}
+
+.plot2 .neighborhood-names {
+
+    position: relative;
+    font-size: 12px;
+    /*color: #333;*/
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+
+.area{
+    /*fill: #A5BEC4;*/
+    opacity: 0.1;
+}
+.line{
+    fill:none;
+    /*stroke: #A5BEC4;*/
+    stroke-width:1px;
+    opacity:1;
+}
+
+rect .mouse-target {
+    fill-opacity: 0;
+}
+
+#plot_map3 {
+    width: 100%;
+    float:left;
+    height:200px;
+}
+.brush .extent {
+    stroke: #fff;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+}
+
+.neighborhoods .col-md-8, .mappingBoston .col-md-8 {
+    padding-left: 0 !important;
+    float: none !important;
+}
+/*------------map-------------*/
+
+.textMap {
+    width:30%;
+    float:left;
+}
+#plot_map1 {
+    width: 100%;
+    padding-right:10px;
+}
+
+#plot_map2 {
+    width:100%;
+    float:left;
+    height:800px;
+}
+canvas {
+    display: block;
+    width:100%;
+    height:800px;
+    position: absolute;
+
+}
+.block-group {
+    fill: #dcdcdc;
+    stroke: #fff;
+    stroke-width:1px;
+}
+
+#plot_map3 {
+    padding-left:15px;
+}
+#plot_map3 .axis .tick text, .plot2 .axis .tick text, .histogram.line.ticks, .plot1 .axis-x .tick text{
+    font-size: 12px;
+    pointer-events: none;
+    fill: #999;
+    font-weight:300;
+}
+
+.bars{
+    margin-top: -40px;
+}
+.mappingBoston h2, .duration h2, .neighborhoods h2{
+    margin-bottom: 15px;
+}
+
+.bold {
+
+    font-weight: bold;
+}
+/*------------plot 1-------------*/
+
+.duration {
+    margin-top: -80px;
+}
+#legend1 svg {
+    height: 30px;
+    padding-top: 10px;
+}
+
+.legendElement {
+    font-size: 12px;
+    color: #999;
+}
+.titleLegendElement{
+    font-weight: bold;
+    color: #333;
+}
+.plot1 {
+    width:100%;
+    background:white;
+    height:600px;
+    position:relative;
+}
+
+.guide{
+    fill:none;
+    stroke:rgb(100,100,100);
+}
+
+
+.axis .tick line{
+    fill:none;
+    shape-rendering: crispEdges;
+    stroke: #e4e4e4;
+    stroke-width: 1;
+    /*stroke-dasharray: 3,2;*/
+}
+
+.dotsMax {
+    fill:#BC000E;
+    stroke:#fff;
+    stroke-width:1px;
+}
+
+.dotsMin {
+    fill:#376E7C;
+    stroke:#fff;
+    stroke-width:1px;
+}
+
+.dotsMean {
+    fill:#F3919A;
+    stroke:#fff;
+    stroke-width:1px;
+}
+
+.dotsMedian {
+    fill:#A5BEC4;
+    stroke:#fff;
+    stroke-width:1px;
+}
+.dotsRange {
+    fill: none;
+    stroke: #BC000E;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+}
+
+/* information icon  */
+span.hahaha {
+    z-index: 100;
+    background-color: transparent;
+    width: 15px;
+    display: inline-block;
+    height: 15px;
+    margin-right: 1px;
+    background-image: url(../img/information02.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+span.hahaha:hover .inside {
+    display: block;
+    background-color: rgba(165,190,196,0.9);
+}
+
+span.hahaha .inside {
+    z-index: 100;
+    position: absolute;
+    display: none;
+    width:200px;
+    background-color: rgba(165,190,196,0.9);
+    padding: 10px;
+}
+.hahaha span {
+    font-weight: normal;
+    font-size: 12px !important;
+    color: white;
+
+}

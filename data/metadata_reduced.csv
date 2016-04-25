@@ -1,0 +1,192 @@
+type,number,id
+Abandoned Bicycle,466,1
+Abandoned Building,168,2
+Abandoned Vehicles,2607,3
+Aircraft Noise Disturbance,13,4
+Alert Boston,92,5
+Animal Found,277,6
+Animal Generic Request,2589,7
+Animal Lost,220,8
+Animal Noise Disturbances,85,9
+Automotive Noise Disturbance,16,10
+Bed Bugs,427,11
+Bicycle Issues,75,12
+Big Buildings Online Request,6,13
+Big Buildings Recycling (INTERNAL),70,14
+Billing Complaint,13,15
+Breathe Easy,210,16
+Bridge Maintenance,8,17
+Building Inspection Request,4961,18
+BWSC General Request,206,19
+BWSC Pothole,32,20
+Call Log,864,21
+Carbon Monoxide,12,22
+Catchbasin,405,23
+CE Collection,4929,24
+Cemetery Maintenance Request,27,25
+Check Investigation,1,26
+Checkin,32,27
+Chronic Dampness/Mold,439,28
+City/State Snow Issues,473,29
+Construction Debris,7,30
+Contractor Complaints,898,31
+Contractors Complaint,780,32
+Cross Metering - Sub-Metering,311,33
+Downed Wire,10,34
+Dumpster & Loading Noise Disturbances,22,35
+Egress,118,36
+Electrical,1357,37
+Empty Litter Basket,2973,38
+Equipment Repair,1728,39
+Exceeding Terms of Permit,190,40
+Fire Department Request,542,41
+Fire Hydrant,255,42
+Fire in Food Establishment,22,43
+Food Alert - Confirmed,77,44
+Food Alert - Unconfirmed,104,45
+General Comments For a Program or Policy,4840,46
+General Comments For An Employee,728,47
+General Lighting Request,1429,48
+General Traffic Engineering Request,64,49
+Graffiti Removal,4284,50
+Ground Maintenance,1880,51
+Heat - Excessive  Insufficient,1324,52
+Heat/Fuel Assistance,13,53
+Hero Square Sign Request,1,54
+Highway Maintenance,540,55
+Housing Discrimination Intake Form,171,56
+Idea Collection,63,57
+Illegal Auto Body Shop,114,58
+Illegal Dumping,45,59
+Illegal Occupancy,402,60
+Illegal Posting of Signs,9,61
+Illegal Rooming House,145,62
+Illegal Use,3,63
+Illegal Vending,2,64
+Improper Storage of Trash (Barrels),18,65
+Install New Lighting,55,66
+Item Price Missing,6,67
+Knockdown Replacement,257,68
+Lead,55,69
+Litter Basket Maintenance,120,70
+Loud Parties/Music/People,121,71
+Maintenance - Homeowner,360,72
+Maintenance Complaint - Residential,424,73
+Major System Failure,407,74
+MBTA Request,312,75
+Mechanical,82,76
+Metrolist Survey,175,77
+Mice Infestation - Residential,489,78
+Misc. Snow Complaint,1051,79
+Missed Trash/Recycling/Yard Waste/Bulk Item,16411,80
+Missing Sign,1117,81
+Mosquitoes (West Nile),25,82
+Municipal Parking Lot Complaints,12,83
+Needle Pickup,622,84
+New Sign  Crosswalk or Pavement Marking,1069,85
+New Tree Requests,1041,86
+News Boxes,419,87
+No Price on Gas/Wrong Price,13,88
+No Utilities - Food Establishment - Electricity,6,89
+No Utilities - Food Establishment - Flood,4,90
+No Utilities - Food Establishment - Water,10,91
+No Utilities Residential - Electricity,110,92
+No Utilities Residential - Gas,42,93
+No Utilities Residential - Water,238,94
+Notification,860,95
+No-Tow Complaint Confirmation,98,96
+Occupying W/Out A Valid CO/CI,18,97
+OCR Front Desk Interactions,2476,98
+OCR Metrolist,11,99
+Overcrowding,51,100
+Overflowing or Un-kept Dumpster,287,101
+Park Improvement Requests,101,102
+Parking Enforcement,8351,103
+Parking Meter Repairs,100,104
+Parking on Front/Back Yards (Illegal Parking),31,105
+Parks General Request,242,106
+Parks Lighting/Electrical Issues,382,107
+Pavement Marking Inspection,130,108
+Pavement Marking Maintenance,633,109
+Pest Infestation - Residential,379,110
+Phone Bank Service Inquiry,19,111
+Pick up Dead Animal,2247,112
+Pickup/Clear Conduit,5,113
+Pigeon Infestation,35,114
+Planting,27,115
+Plumbing,473,116
+Poor Conditions of Property,173,117
+Poor Ventilation,14,118
+Pothole Repair (Internal),5393,119
+Private Parking Lot Complaints,14,120
+Product Short Measure,3,121
+Protection of Adjoining Property,285,122
+Public Events Noise Disturbances,12,123
+Public Works General Request,616,124
+PWD Graffiti,1404,125
+Rat Bite,6,126
+Recycling Cart Inquiry,172,127
+Recycling Cart Return,528,128
+Rental Unit Delivery Conditions,78,129
+Request for Litter Basket Installation,152,130
+Request for Pothole Repair,8470,131
+Request for Recycling Cart,2971,132
+Request for Snow Plowing,30358,133
+Request for Snow Plowing (Emergency Responder),693,134
+Requests for Street Cleaning,13103,135
+Requests for Traffic Signal Studies or Reviews,527,136
+Roadway Repair,338,137
+Rodent Activity,2171,138
+Rooftop & Mechanical Disturbances,10,139
+Scale Not Visible,2,140
+Scanning Overcharge,7,141
+Schedule a Bulk Item Pickup,12255,142
+Schedule a Bulk Item Pickup SS,5380,143
+Senior Shoveling,2,144
+Sewage/Septic Back-Up,107,145
+Short Measure - Gas,23,146
+Sidewalk Cover / Manhole,335,147
+Sidewalk Repair,1429,148
+Sidewalk Repair (Internal),482,149
+Sidewalk Repair (Make Safe),4170,150
+Sign Repair,4825,151
+Sign Shop WO,26,152
+Snow Removal,73,153
+Snow/Ice Control,2,154
+Space Savers,634,155
+Squalid Living Conditions,83,156
+Sticker Request,2459,157
+Street Light Knock Downs,599,158
+Street Light Longterm Repair,1,159
+Street Light Outages,7956,160
+Street Light Outages (Internal),4,161
+Student Move-in Issues,32,162
+Student Overcrowding,9,163
+Test Case A,1,164
+Traffic Signal Inspection,2263,165
+Traffic Signal Repair,2096,166
+Transportation General Request,295,167
+Trash on Vacant Lot,381,168
+Tree Emergencies,785,169
+Tree in Park,132,170
+Tree Maintenance Requests,4002,171
+Undefined Noise Disturbance,40,172
+Unit Pricing Wrong/Missing,7,173
+Unsafe Dangerous Conditions,1429,174
+Unsanitary Conditions - Employees,45,175
+Unsanitary Conditions - Establishment,426,176
+Unsanitary Conditions - Food,210,177
+Unsatisfactory Living Conditions,2595,178
+Unsatisfactory Utilities - Electrical  Plumbing,180,179
+Unshoveled Sidewalk,16,180
+Upgrade Existing Lighting,39,181
+Utility Call-In,643,182
+Utility Casting Repair,95,183
+Valet Parking Problems,6,184
+Walk-In Service Inquiry,4,185
+Water in Gas - High Priority,2,186
+Watermain Break,86,187
+Work Hours-Loud Noise Complaints,224,188
+Work w/out Permit,1140,189
+Working Beyond Hours,406,190
+Zoning,74,191

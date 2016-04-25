@@ -1,0 +1,27 @@
+html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+}
+.container{
+    height:100%;
+    position:relative;
+    margin-top: 20px;
+}
+.container .section{
+    width:100%;
+}
+
+.controls{
+    position:relative;
+    height:100px;
+    border-bottom:1px solid rgb(200,200,200);
+}
+
+
+.axis .domain{
+    display:none;
+}
+.axis line{
+    stroke:rgb(120,120,120);
+}
