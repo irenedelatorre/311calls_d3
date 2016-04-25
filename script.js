@@ -9,7 +9,7 @@ var wMap2 = d3.select('#plot_map3').node().clientWidth,
 var
     w1 = d3.select('.plot1').node().clientWidth,
     h1 = d3.select('.plot1').node().clientHeight;
- var
+var
     w2 = d3.select('.plot2').node().clientWidth,
     h2 = d3.select('.plot2').node().clientHeight;
 
@@ -69,15 +69,15 @@ function dataloaded(err,neighborhood,rows,types) {
     var callsByTime = calls.dimension(function(d){return d.startTime});
 
     callsType = callsByType.filterAll().top(Infinity);
-    callsType.sort(function (a, b) {
-        return a.duration - b.duration;
-    });
+    //callsType.sort(function (a, b) {
+    //    return a.duration - b.duration;
+    //});
 
     var nestedNeighborhood = d3.nest()
         .key(function (d) {
             return name = d.neighbor
         })
-        //.sortKeys(d3.ascending)
+        .sortKeys(d3.ascending)
         .entries(callsType);
 
     var neighborhoodsNames = nestedNeighborhood.map(function (d) {return d.key});
@@ -232,15 +232,15 @@ function dataloaded(err,neighborhood,rows,types) {
         .attr('y', 10);
 
 
-    
-    
+
+
     var mapModuleDots = d3.mapDotsSeries(neighborhood)
         .width(wMap1)
         .height(hMap1)
         .scale(220000);
 
     d3.select(".container").select(".mappingBoston").select('#plot_map2').append('canvas')
-    
+
     var plot_mapDots = d3.select(".container").select(".mappingBoston").select('#plot_map2')
         .datum(callsType)
         .call(mapModuleDots);
@@ -346,6 +346,8 @@ function dataloaded(err,neighborhood,rows,types) {
         var neighborhoodsNames = ["Allston / Brighton", "Back Bay", "Beacon Hill", "Boston", "Brighton", "Charlestown", "Chestnut Hill", "Dorchester", "Downtown / Financial District", "East Boston", "Fenway / Kenmore / Audubon Circle / Longwood", "Greater Mattapan", "Hyde Park", "Jamaica Plain", "Mission Hill", "Roslindale", "Roxbury", "South Boston / South Boston Waterfront", "South End", "Unknown", "West Roxbury"]
 
         callsByType.filterAll();
+        callsByTime.filterAll();
+
         if (type == "All") {
             callsType = callsByType.filterAll().top(Infinity);
         } else {
@@ -372,7 +374,7 @@ function dataloaded(err,neighborhood,rows,types) {
         if (type == "Request for Snow Plowing" || type == "All" || type == "Missed Trash/Recycling/Yard Waste/Bulk Item") {
             var barchartInDispatch = barchart
                 .maxScaleY(12000);
-             var newY = 1800;
+            var newY = 1800;
         } else {
             var barchartInDispatch = barchart
                 .maxScaleY(800);
@@ -434,13 +436,13 @@ function dataloaded(err,neighborhood,rows,types) {
 // parse data
 function parse(d){
 
-	return {
-		startTime: new Date(d.OPEN_DT),
-		endTime: new Date(d.CLOSED_DT),
-		type: d.TYPE,
-		neighbor: d.neighborhood,
+    return {
+        startTime: new Date(d.OPEN_DT),
+        endTime: new Date(d.CLOSED_DT),
+        type: d.TYPE,
+        neighbor: d.neighborhood,
         lngLat: [+d.LONGITUDE, +d.LATITUDE]
-	}
+    }
 
 
 
