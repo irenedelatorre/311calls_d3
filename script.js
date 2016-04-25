@@ -16,9 +16,9 @@ var
 
 //load data
 var queue = d3_queue.queue()
-    .defer(d3.json, "../data/bos_neighborhoods.geojson")
-    .defer(d3.csv,'../data/311__Service_Requests.csv',parse)
-    .defer(d3.csv,'../data/metadata_reduced.csv',parseType)
+    .defer(d3.json, "data/bos_neighborhoods.geojson")
+    .defer(d3.csv,'data/311__Service_Requests.csv',parse)
+    .defer(d3.csv,'data/metadata_reduced.csv',parseType)
     .await(dataloaded);
 
 globalDispatch = d3.dispatch('changetype','pickTime', 'changetime','changetypedots');
