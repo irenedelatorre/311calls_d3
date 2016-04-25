@@ -69,15 +69,15 @@ function dataloaded(err,neighborhood,rows,types) {
     var callsByTime = calls.dimension(function(d){return d.startTime});
 
     callsType = callsByType.filterAll().top(Infinity);
-    callsType.sort(function (a, b) {
-        return a.duration - b.duration;
-    });
+    //callsType.sort(function (a, b) {
+    //    return a.duration - b.duration;
+    //});
 
     var nestedNeighborhood = d3.nest()
         .key(function (d) {
             return name = d.neighbor
         })
-        //.sortKeys(d3.ascending)
+        .sortKeys(d3.ascending)
         .entries(callsType);
 
     var neighborhoodsNames = nestedNeighborhood.map(function (d) {return d.key});
@@ -346,6 +346,8 @@ function dataloaded(err,neighborhood,rows,types) {
         var neighborhoodsNames = ["Allston / Brighton", "Back Bay", "Beacon Hill", "Boston", "Brighton", "Charlestown", "Chestnut Hill", "Dorchester", "Downtown / Financial District", "East Boston", "Fenway / Kenmore / Audubon Circle / Longwood", "Greater Mattapan", "Hyde Park", "Jamaica Plain", "Mission Hill", "Roslindale", "Roxbury", "South Boston / South Boston Waterfront", "South End", "Unknown", "West Roxbury"]
 
         callsByType.filterAll();
+        callsByTime.filterAll();
+
         if (type == "All") {
             callsType = callsByType.filterAll().top(Infinity);
         } else {

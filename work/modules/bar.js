@@ -128,7 +128,7 @@ var _dis = d3.dispatch('changetime','changetype');
           _dis.changetime(extent);
 
       }
-         
+
 
   }
 
