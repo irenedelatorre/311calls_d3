@@ -45,16 +45,19 @@ d3.mapDotsSeries = function (neighborhoods){
             .attr("transform","translate("+m.l+","+ m.t+")")
             .style("opacity",0);
 
-        ctx = canvas1.node().getContext('2d');
+        var ctx = canvas1.node().getContext('2d');
         ctx.fillStyle = "#fff";
+        ctx.fillRect(0, 0, chartW, chartH);
 
-        path = d3.geo.path()
+
+
+        var path = d3.geo.path()
             .projection(projection)
             .context(ctx);
 
         var circle = d3.geo.circle();
 
-        ctx.clearRect(0,0,w,h);
+        //ctx.clearRect(0,0,w,h);
 
         var oneHour = (1/(24*60));
         var color1 = "#376E7C"; //in one hour
@@ -78,6 +81,8 @@ d3.mapDotsSeries = function (neighborhoods){
         _dis.on("shape",function(t){
 
             ctx.clearRect(0,0,w,h);
+            //ctx.fillStyle = "#fff";
+            //ctx.fillRect(0, 0, chartW, chartH);
             ctx.lineWidth = 2;
             path(neighborhoods);
             ctx.fillStyle = 'rgb(221, 223, 227)';
@@ -337,13 +342,6 @@ d3.mapDotsSeries = function (neighborhoods){
 
             });
 
-            canvas1.transition()
-                .duration(350)
-                .style("opacity", 1)
-                .each("end", function() { canvas0.remove(); });
-
-
-
             (neighborhoods.features).forEach(function(d){
                 var nameX = path.centroid(d)[0];
                 var nameY = path.centroid(d)[1];
@@ -494,9 +492,16 @@ d3.mapDotsSeries = function (neighborhoods){
                 };
 
             });
-
+            canvas1.transition()
+                .duration(1000)
+                .style("opacity", 1)
+                .each("end", function() {
+                    canvas0
+                        .remove();
+                });
 
         });
+
 
 
     }

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="436e7e15-ae44-4021-bd4b-a8bc967dcb3f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/modules/mapdotsSeries.js" afterPath="$PROJECT_DIR$/work/modules/mapdotsSeries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/work/style.css" afterPath="$PROJECT_DIR$/work/style.css" />
     </list>
     <ignored path="311calls_Boston.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,27 +37,27 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/work/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="209" column="57" selection-start-line="209" selection-start-column="55" selection-end-line="209" selection-end-column="57" />
+            <state vertical-scroll-proportion="-12.448276">
+              <caret line="198" column="23" selection-start-line="198" selection-start-column="23" selection-end-line="198" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mapdotsSeries.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mapdotsSeries.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/work/modules/mapdotsSeries.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="340" column="29" selection-start-line="340" selection-start-column="29" selection-end-line="340" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.4662857">
+              <caret line="495" column="30" selection-start-line="495" selection-start-column="30" selection-end-line="495" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/work/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.09550562">
+            <state vertical-scroll-proportion="2.9310346">
               <caret line="380" column="23" selection-start-line="380" selection-start-column="23" selection-end-line="380" selection-end-column="25" />
               <folding />
             </state>
@@ -75,12 +75,12 @@
         <option value="$PROJECT_DIR$/work/scroll.js" />
         <option value="$PROJECT_DIR$/work/index.html" />
         <option value="$PROJECT_DIR$/work/modules/histogram.js" />
-        <option value="$PROJECT_DIR$/work/style.css" />
         <option value="$PROJECT_DIR$/work/modules/bar.js" />
         <option value="$PROJECT_DIR$/work/modules/durationseries.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/work/modules/mapdotsSeries.js" />
         <option value="$PROJECT_DIR$/work/script.js" />
+        <option value="$PROJECT_DIR$/work/style.css" />
+        <option value="$PROJECT_DIR$/work/modules/mapdotsSeries.js" />
       </list>
     </option>
   </component>
@@ -92,10 +92,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1932" />
-    <option name="height" value="1056" />
+    <option name="x" value="518" />
+    <option name="y" value="24" />
+    <option name="width" value="1919" />
+    <option name="height" value="1012" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -286,26 +286,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="518" y="24" width="1919" height="1012" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19519833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19653179" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -673,14 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="209" column="57" selection-start-line="209" selection-start-column="55" selection-end-line="209" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/work/modules/bar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -710,18 +702,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work/modules/mapdotsSeries.js">
+    <entry file="file://$PROJECT_DIR$/work/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="340" column="29" selection-start-line="340" selection-start-column="29" selection-end-line="340" selection-end-column="29" />
+        <state vertical-scroll-proportion="2.9310346">
+          <caret line="380" column="23" selection-start-line="380" selection-start-column="23" selection-end-line="380" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/work/script.js">
+    <entry file="file://$PROJECT_DIR$/work/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.09550562">
-          <caret line="380" column="23" selection-start-line="380" selection-start-column="23" selection-end-line="380" selection-end-column="25" />
+        <state vertical-scroll-proportion="-12.448276">
+          <caret line="198" column="23" selection-start-line="198" selection-start-column="23" selection-end-line="198" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/modules/mapdotsSeries.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4662857">
+          <caret line="495" column="30" selection-start-line="495" selection-start-column="30" selection-end-line="495" selection-end-column="30" />
           <folding />
         </state>
       </provider>
