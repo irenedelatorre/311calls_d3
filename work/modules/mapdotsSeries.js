@@ -80,9 +80,9 @@ d3.mapDotsSeries = function (neighborhoods){
         //question!! how brush work?? and how to clear the canvas dots at the end
         _dis.on("shape",function(t){
 
-            ctx.clearRect(0,0,w,h);
-            //ctx.fillStyle = "#fff";
-            //ctx.fillRect(0, 0, chartW, chartH);
+            //ctx.clearRect(0,0,w,h);
+            ctx.fillStyle = "#fff";
+            ctx.fillRect(0, 0, chartW, chartH);
             ctx.lineWidth = 2;
             path(neighborhoods);
             ctx.fillStyle = 'rgb(221, 223, 227)';
@@ -493,12 +493,13 @@ d3.mapDotsSeries = function (neighborhoods){
 
             });
             canvas1.transition()
-                .duration(1000)
+                .duration(350)
                 .style("opacity", 1)
                 .each("end", function() {
                     canvas0
                         .remove();
                 });
+
 
         });
 

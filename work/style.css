@@ -190,7 +190,6 @@ rect .mouse-target {
     width:100%;
     float:left;
     height:800px;
-    margin-top: -20px;
 }
 canvas {
     display: block;
