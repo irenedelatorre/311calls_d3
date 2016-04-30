@@ -254,8 +254,7 @@ function dataloaded(err,neighborhood,rows,types) {
     //dots
     //legend
     // draw legend
-    legendData = [{color: "#BC000E", dotType: "Maximum duration"}, {color: "#F3919A", dotType: "Median duration"}, {color: "#A5BEC4", dotType: "Mean duration"}, {color: "#376E7C", dotType: "Minimum duration"}];
-
+    legendData = [{color: "#376E7C ", dotType: "Minimum duration"},{color: "#A5BEC4 ", dotType: "Mean duration"},{color: "#F3919A ", dotType: "Median duration"}, {color: "#BC000E ", dotType: "Maximum duration"} ];
     var legend = d3.select(".container").select('#legend1').append('svg')
         .attr('width', w1)
         .append("g")
